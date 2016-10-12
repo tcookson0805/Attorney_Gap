@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  
+  
+  <div class='container hero'>
+  
+    <div>
+      <% include ../partials/user_nav %>
+    </div>
+    
+    
+    <div class='row'>
+      <div class='col s6'>
+        <h5 class='center-align appearance_header'>Requested Appearances</h5>
+        <% requestedAppearances.forEach(function(request) { %>
+          <div class='requested_appearance'>
+            <div class="card horizontal">
+              <div class="card-stacked">
+                <div class="card-content">                
+                  <ul class='collapsible' data-collapsible='expandable'>
+                    <li>
+                      <div class="collapsible-header active requested_appearance_header">Basic Information</div>
+                      <div class="collapsible-body">
+                        <div class='requested_appearance_box'>  
+                          <div class='requested_appearance_key'>Appearance Type: <span><%= request.appearanceType %></span></div>
+                          <div class='requested_appearance_key'>Case Type: <span><%= request.caseType %></span></div>     
+                          <div class='requested_appearance_key'>Appearance Date: <span><%= request.appearanceDate %> </span></div>
+                          <div class='requested_appearance_key'>Appearance Time: <span><%= request.appearanceTime %></span></div> 
+                          <div class='requested_appearance_key'>Appearance County: <span><%= request.courtInfo.courtAddress.county %></span></div>                       
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class='collapsible-header requested_appearance_header'>Case Information</div>
+                      <div class='collapsible-body'>
+                        <div class='requested_appearance_box'>
+                          <div class='requested_appearance_key'>Case Header: <span><%= request.caseHeader %></span></div>
+                          <div class='requested_appearance_key'>Case Number: <span><%= request.caseNumber %></span></div>
+                          <div class='requested_appearance_key'>Client Type: <span><%= request.clientInfo.clientType %></span></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header requested_appearance_header">Client Information</div>
+                      <div class='collapsible-body'>
+                        <div class='requested_appearance_box'>
+                          <div class='requested_appearance_key'>Client Name: <span><%= request.clientInfo.name %></span></div>
+                          <div class='requested_appearance_key'>Client Phone: <span><%= request.clientInfo.phone %></span></div>
+                          <div class='requested_appearance_key'>Client Email: <span><%= request.clientInfo.email %></span></div>
+                          <div class='requested_appearance_key'>Client Street: <span><%= request.clientInfo.street %></span></div>
+                          <div class='requested_appearance_key'>Client City: <span><%= request.clientInfo.city %></span></div>
+                          <div class='requested_appearance_key'>Client State: <span><%= request.clientInfo.state %></span></div>
+                          <div class='requested_appearance_key'>Client Zip: <span><%= request.clientInfo.zip %></span></div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header requested_appearance_header">Court Information</div>
+                      <div class='collapsible-body'>
+                        <div class='requested_appearance_box'>
+                          <div class='requested_appearance_key'>Court Name: <span><%= request.courtInfo.courtName %></span></div> 
+                          <div class='requested_appearance_key'>Judge Name: <span><%= request.courtInfo.judgeName %></span></div> 
+                          <div class='requested_appearance_key'>Court Street: <span><%= request.courtInfo.courtAddress.street %></span></div> 
+                          <div class='requested_appearance_key'>Court City: <span><%= request.courtInfo.courtAddress.city %></span></div> 
+                          <div class='requested_appearance_key'>Court State: <span><%= request.courtInfo.courtAddress.state %></span></div> 
+                          <div class='requested_appearance_key'>Court Zip: <span><%= request.courtInfo.courtAddress.zip %></span></div> 
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header requested_appearance_header">Attorney Information</div>
+                      <div class='collapsible-body'>
+                        <div class='requested_appearance_box'>
+                          <% var atty = attorneys[0][request.appAttorney] ? attorneys[0][request.appAttorney] : {} %>
+                          <div class='requested_appearance_key'>Name: <span><%= atty.firstName ? atty.firstName : '' %> <%= atty.lastName ? atty.lastName : '' %></span></div> 
+                          <div class='requested_appearance_key'>Firm Name: <span><%= atty.firmName ? atty.firmName : '' %></span></div> 
+                          <div class='requested_appearance_key'>Email: <span><%= atty.email ? atty.email : '' %></span></div> 
+                          <div class='requested_appearance_key'>Phone: <span><%= atty.phone ? atty.phone : '' %></span></div> 
+                          <div class='requested_appearance_key'>Fax: <span><%= atty.fax ? atty.fax : '' %></span></div> 
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <a href="/home/appearances/edit_appearance/<%= request._id %>">Edit</a>
+                  <a id='<%= request._id %>' class='requested_appearance_delete' href='/home/appearances/'>Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+      
+
+      
+      <div class='col s6'>
+        <h5 class='center-align appearance_header'>Accepted Appearances</h5>
+        <% acceptedAppearances.forEach(function(accepted) { %>
+          <div class='accepted_appearance'>
+            <div class="card horizontal">
+              <div class="card-stacked">
+                  <div class="card-content">
+                    <ul class='collapsible' data-collapsible='expandable'>
+                      <li>
+                        <div class="collapsible-header active accepted_appearance_header">Basic Information</div>
+                        <div class="collapsible-body">
+                          <div class='accepted_appearance_box'>                   
+                            <div class='accepted_appearance_key'>Appearance Type: <span><%= accepted.appearanceType %></span></div>
+                            <div class='accepted_appearance_key'>Case Type: <span><%= accepted.caseType %></span></div>     
+                            <div class='accepted_appearance_key'>Appearance Date: <span><%= accepted.appearanceDate %></span></div>
+                            <div class='accepted_appearance_key'>Appearance Time: <span><%= accepted.appearanceTime %></span></div>
+                            <div class='accepted_appearance_key'>Appearance County: <span><%= accepted.courtInfo.courtAddress.county %></span> </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class='collapsible-header accepted_appearance_header'>Case Information</div>
+                        <div class='collapsible-body'>
+                          <div class='accepted_appearance_box'> 
+                            <div class='accepted_appearance_key'>Case Header : <span><%= accepted.caseHeader %></span></div>
+                            <div class='accepted_appearance_key'>Case Number : <span><%= accepted.caseNumber %></span></div>
+                            <div class='accepted_appearance_key'>Client Type : <span><%= accepted.clientInfo.clientType %></span></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header accepted_appearance_header">Client Information</div>
+                        <div class='collapsible-body'>
+                          <div class='accepted_appearance_box'>
+                            <div class='accepted_appearance_key'>Client Name : <span><%= accepted.clientInfo.name %></span></div>
+                            <div class='accepted_appearance_key'>Client Phone: <span><%= accepted.clientInfo.phone %></span></div>
+                            <div class='accepted_appearance_key'>Client Email: <span><%= accepted.clientInfo.email %></span></div>
+                            <div class='accepted_appearance_key'>Client Street: <span><%= accepted.clientInfo.street %></span></div>
+                            <div class='accepted_appearance_key'>Client City: <span><%= accepted.clientInfo.city %></span></div>
+                            <div class='accepted_appearance_key'>Client State: <span><%= accepted.clientInfo.state %></span></div>
+                            <div class='accepted_appearance_key'>Client Zip: <span><%= accepted.clientInfo.zip %></span></div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header accepted_appearance_header">Court Information</div>
+                        <div class='collapsible-body'>
+                          <div class='accepted_appearance_box'>
+                            <div class='accepted_appearance_key'>Court Name: <span><%= accepted.courtInfo.courtName %></span></div> 
+                            <div class='accepted_appearance_key'>Judge Name: <span><%= accepted.courtInfo.judgeName %></span></div> 
+                            <div class='accepted_appearance_key'>Court Street: <span><%= accepted.courtInfo.courtAddress.street %></span></div> 
+                            <div class='accepted_appearance_key'>Court City: <span><%= accepted.courtInfo.courtAddress.city %></span></div> 
+                            <div class='accepted_appearance_key'>Court State: <span><%= accepted.courtInfo.courtAddress.state %></span></div> 
+                            <div class='accepted_appearance_key'>Court Zip: <span><%= accepted.courtInfo.courtAddress.zip %></span></div> 
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="collapsible-header accepted_appearance_header">Attorney Information</div>
+                        <div class='collapsible-body'>
+                          <div class='accepted_appearance_box'>
+                            <% var atty = attorneys[0][accepted.reqAttorney] %>
+                            <div class='requested_appearance_key'>Name: <span><%= atty.firstName %> <%= atty.lastName %></span></div> 
+                            <div class='requested_appearance_key'>Firm Name: <span><%= atty.firmName %></span></div> 
+                            <div class='requested_appearance_key'>Email: <span><%= atty.email %></span></div> 
+                            <div class='requested_appearance_key'>Phone: <span><%= atty.phone %></span></div> 
+                            <div class='requested_appearance_key'>Fax: <span><%= atty.fax %></span></div> 
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-action">
+                    <a href="#">Edit</a>
+                    <a href='#'>Delete</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div>
+    <% include ../partials/templates.ejs %>
+  </div>
+          
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+  
+  
+</body>
+
+
+</html>

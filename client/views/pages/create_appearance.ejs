@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  
+  <div class='container hero'>
+    
+    <div>
+      <% include ../partials/user_nav%>
+    </div>
+
+    <div class='row'>
+      <div class='col s12 create_appearance_card'>
+        <h2 class='center-align'>Create Appearance</h5>
+
+        <form action="/api/appearances" method="post">
+      
+          <div class='card-panel hoverable'>
+            <div class='row create_appearance_headline'>
+              Case Information
+            </div>
+    
+          
+            <div class='row'>
+            
+             <div class="input-field col s4">
+               <input id="case_header" type="text" class="validate" name="case_header">
+               <label for="case_header">Case Header</label>
+             </div>
+             
+             <div class="input-field col s4">
+               <input id="case_number" type="text" class="validate" name="case_number">
+               <label for="case_number">Case Number</label>
+             </div>
+             
+             <div class="input-field col s4">
+               <input id="case_type" type="text" class="validate" name="case_type">
+               <label for="case_type">Case Type</label>
+             </div>
+             
+            </div>
+
+            
+            <div class='row'>
+            
+
+             <div class="input-field col s4">
+               <input id="appearance_type" type="text" class="validate" name="appearance_type">
+               <label for="appearance_type">Appearance Type</label>
+             </div>
+             
+              <div class="input-field col s4">
+                <input id="date" type="text" class="datepicker" placeholder="Appearance Date" name="appearance_date">
+              </div>
+              
+              <div class="input-field col s4">
+                <input id="timepicker" class="timepicker" type="text" placeholder="Appearance Time" name="appearance_time">
+              </div>
+             
+            </div>
+            
+          </div>
+          
+          <div class='card-panel hoverable'>
+            <div class='row create_appearance_headline'>
+              Client Info
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="client_name" type="text" class="validate" name="client_name">
+                <label for="client_name">Name</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="client_type" type="text" class="validate" name="client_type">
+                <label for="client_type">Client Type</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="client_phone" type="text" class="validate" name="client_phone">
+                <label for="client_phone">Phone</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="client_email" type="text" class="validate" name="client_email">
+                <label for="client_email">Email</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="client_street" type="text" class="validate" name="client_street">
+                <label for="client_street">Street</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="client_city" type="text" class="validate" name="client_city">
+                <label for="client_city">City</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="client_state" type="text" class="validate" name="client_state">
+                <label for="client_state">State</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="client_zip" type="text" class="validate" name="client_zip">
+                <label for="client_zip">Zip</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class='card-panel hoverable'>
+            <div class='row create_appearance_headline'>
+              Court Info
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s4">
+                <input id="court_name" type="text" class="validate" name="court_name">
+                <label for="court_name">Court</label>
+              </div>
+              
+              <div class="input-field col s4">
+                <input id="court_county" type="text" class="validate" name="court_county">
+                <label for="court_county">County</label>
+              </div>
+              
+              <div class="input-field col s4">
+                <input id="court_judge" type="text" class="validate" name="court_judge">
+                <label for="court_judge">Judge</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="court_street" type="text" class="validate" name="court_street">
+                <label for="court_street">Street</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="court_city" type="text" class="validate" name="court_city">
+                <label for="court_city">City</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="input-field col s6">
+                <input id="court_state" type="text" class="validate" name="court_state">
+                <label for="court_state">State</label>
+              </div>
+              
+              <div class="input-field col s6">
+                <input id="court_zip" type="text" class="validate" name="court_zip">
+                <label for="court_zip">Zip</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class='card-panel hoverable'>
+            <div class='row create_appearance_headline'>
+              Miscellaneous Information
+            </div>
+            <div class='input-field col s12'>
+              <textarea id="appearance_misc" class="materialize-textarea" name="miscellaneous_info"></textarea>
+              <label for="appearance_misc">Write Here</label>
+            </div>
+            <div class='row'></div>
+          </div>
+          <div class='row center-align'>
+            <button class="center-align btn waves-effect waves-light" type="submit">Submit</button>
+          </div>
+        </form>
+      
+      
+      </div>
+    </div>
+    
+    
+  </div>
+  
+          
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+  
+  
+</body>
+
+
+</html>

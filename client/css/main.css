@@ -1,0 +1,429 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+/*  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('../images/old-courtroom-trial.jpg');
+*/  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
+}
+
+
+/* UNIVERSAL CLASSES */
+
+
+.hidden {
+  display: none;
+}
+
+.hero {
+  color: black;
+  padding-top: 2em;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: black;
+}
+
+
+.dropdown-content li > span {
+  color: black;
+}
+
+div.picker__date-display {
+  background-color: #505050;
+}
+
+.picker__weekday-display {
+  background-color: black;
+}
+
+.picker__close, .picker__today {
+  color: #505050;
+}
+
+
+/* NAV BAR */
+
+.nav_bar {
+  display: inline-block;
+  float: none;
+  position: relative;
+  width: 100%;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1em;
+  background-color: none;
+  padding-top: 3em;
+  color: black;
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 0.2em;
+}
+
+.nav_bar_menu {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.nav_bar_menu_item {
+  display: inline-block;
+  float: left;
+}
+
+.nav_bar_menu_item a {
+  padding: 2em;
+  color: black;
+}
+
+/* unvisited link */
+.nav_bar_menu_item a:link {
+  color: black;
+}
+
+/* visited link */
+.nav_bar_menu_item a:visited {
+  color: black;
+}
+
+/* mouse over link */
+.nav_bar_menu_item a:hover {
+  color: gray;
+}
+
+/* selected link */
+.nav_bar_menu_item a:active {
+  color: blue;
+}
+
+
+.container {
+  border-top: 0.1em solid white;
+}
+
+
+.home_headline {
+  display: inline-block;
+  margin: 1.5em auto;
+}
+
+.home_info {
+  font-size: 1.5em;
+}
+
+.home_links {
+  margin: 2em;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+}
+
+
+.home_links a:link {
+  color: black;
+}
+
+.home_links a:visited {
+  color: black;
+}
+
+.hero_links a:hover {
+  color: gray;
+}
+
+.hero_links a:active {
+  color: black;
+}
+
+.home_signup {
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  float: left;
+  border: 0.1em white solid;
+  border-radius: 0.2em;
+}
+
+.home_signin {
+  padding: 0.5em 1.5em;
+  display: inline-block;
+  float: left;
+  border: 0.1em white solid;
+  border-radius: 0.2em;
+}
+
+
+/* USER NAV */
+
+.user_nav {
+
+}
+
+/* SIGNUP STUFF */
+
+
+.signup_headline {
+  margin: 1em auto;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.signup_form {
+  background-color: white;
+  border-radius: 0.4em;
+  color: black;
+}
+
+.signup_fields {
+  padding: 2em;
+}
+
+.signup_info {
+  border-left: 0.1em solid white;
+}
+
+.submit_button {
+  padding: 0 auto;
+}
+
+
+/* LOGIN STUFF */
+
+.login_headline {
+  margin: 1em auto;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.login_form {
+  background-color: white;
+  border-radius: 0.4em;
+  color: black;
+}
+
+.login_fields {
+  padding: 2em;
+}
+
+.login_info {
+  border-left: 0.1em solid white;
+}
+
+/* HOME STUFF */
+
+.home {
+  color: black;
+  padding-top: 3em;
+  background-color: none;
+  
+}
+
+
+/* Create Appearance */
+
+.create_appearance {
+  color: black;
+  background-color: white;
+}
+
+.create_appearance_card {
+  padding: 1em;
+}
+
+.create_appearance_headline {
+  text-align: center;
+  font-size: 2em;
+  margin: 1em;
+}
+
+
+/* PROFILE */
+
+.profile_headline {
+  margin: 0.2em;
+}
+
+.profile_address {
+  margin-left: 2em;
+}
+
+.profile_left {
+  padding-left: 1em; 
+}
+
+.profile_right {
+  color: red;
+}
+
+.profile_link {
+  padding-left: 0.5em;
+}
+
+.profile_link:hover {
+  border-left: 0.1em black solid;
+}
+
+
+/* APPEARANCE SEARCH */
+
+/* overriding materialize height */
+.select-wrapper input.select-dropdown {
+  height: 4em;
+}
+
+.appearance_search {
+  color: black;
+  background-color: white;
+  height: 5em;
+  padding: 0 2em;
+}
+
+.appearance_search_state {
+  color: black;
+  cursor: pointer;
+}
+
+.appearance_search_county {
+  color: black;
+  cursor: pointer
+}
+
+.appearance_search_date {
+  line-height: 5em;
+}
+
+.appearance_search_submit {
+  padding: 0 1em;
+  line-height: 5em;
+}
+
+/* APPEARANCE SEARCH RESULTS */
+
+.appearance_search_results {
+  height: 40em;
+  overflow: scroll;
+  padding: 0 2em;
+}
+
+.appearance_search_result {
+  margin: 0;
+  padding: 0;
+}
+
+.appearance_search_result_tease {
+  margin: 0;
+  padding: 0;
+}
+
+.appearance_search_result_box {
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.appearance_search_result_info {
+  font-weight: bold;
+}
+
+.appearance_search_result_info span {
+  font-weight: normal;
+}
+ .x { 
+  padding: 0;
+ }
+
+/* APPEARANCES*/
+
+.appearance_header {
+  margin: 1em auto;
+}
+
+.requested_appearance, .accepted_appearance {
+  margin-bottom: 2em;
+}
+
+.requested_appearance_box, .accepted_appearance_box {
+  padding-left: 2em;
+  background-color: white;
+}
+
+.requested_appearance_key, .accepted_appearance_key {
+  font-weight: bold;
+  padding: 0.2em 0;
+}
+
+.requested_appearance_key span, .accepted_appearance_key span {
+  font-weight: normal;
+}
+
+.requested_appearance_header, .accepted_appearance_header {
+  background-color: #ffab40;
+  background: linear-gradient( rgba(255, 171, 64, 1), rgba(255, 171, 64, 0.8) )
+}
+
+
+/* NAVIGATION FOR USER */
+
+
+
+.nav_user_account_link {
+  color: black;
+  font-size: 0.8em;
+}
+
+
+/* Date Picker */
+
+.datepicker {
+  color: black;
+}
+
+
+.card-content {
+    background: no-repeat url('../images.png') 0 0;
+  background-color: #EBEBEB;
+  background-repeat: repeat;
+}
+
+
+
+
+ /* label focus color */
+.input-field input[type=text]:focus + label {
+     color: #000;
+}
+/* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+

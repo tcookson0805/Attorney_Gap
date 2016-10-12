@@ -1,0 +1,33 @@
+    
+<!-- views/partials/user_appearance_search_nav.ejs -->
+
+    <nav class='white nav_user appearance_search'>
+        <div>
+          <form class='appearance_search_form'> 
+            <div class='row'>
+              <div class='col s2 appearance_search_state'>
+                <select>
+                  <option value="" disabled selected>Select State</option>
+                  <option value="1">Alabama</option>
+                  <option value="2">Alaska</option>
+                  <option value="3">Missouri</option>
+                </select>
+              </div>
+              <div class='col s2 appearance_search_county'>
+                <select>
+                  <option value="" disabled selected>Select County</option>
+                  <option value="1">Adair</option>
+                  <option value="2">Adrian</option>
+                  <option value="3">Butler</option>
+                </select>
+              </div>
+              <div class='col s2 appearance_search_date'>
+                <input id='date' type='date' class='datepicker' placeholder='Date' name='appearance_search_date'>
+              </div>
+              <div class='col s4 offset-s1 appearance_search_submit'>
+                <button class="center-align btn waves-effect waves-light grey darken-1" type="submit">Search Appearances</button>
+              </div>
+            </div>            
+          </form>
+        </div>
+    </nav>
