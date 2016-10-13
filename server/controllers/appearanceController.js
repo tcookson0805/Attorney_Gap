@@ -181,6 +181,20 @@ module.exports = {
     
   },
   
+  acceptAppearance : function(req, res, next) {
+    
+    console.log(req.user.id);
+    console.log(req.params.id);
+    
+    AppearanceModel.findOneAndUpdate({_id: req.params.id}, { $set: { appAttorney: req.user.id}}, {upsert: true}, function(err, app) {
+      if(err) {
+        throw err
+      }
+      res.redirect('/home');
+    })
+    
+  },
+  
   // DELETE
   
   deleteAppearance : function(req, res, next) {

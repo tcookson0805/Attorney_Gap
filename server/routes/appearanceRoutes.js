@@ -16,14 +16,16 @@ module.exports = function(app) {
   // route for creating appearance
   app.post('/api/appearances', appearanceController.createAppearance);
   
-  // route for deleting a user
+  // route for deleting appearance
   app.delete('/api/appearances/:id', appearanceController.deleteAppearance);
   
-  // route for updating a user
+  // route for updating appearance
   app.post('/api/appearances/:id', appearanceController.updateAppearance);
   
+  // route for accepting appearance
   app.get('/home/appearances', appearanceController.getAppearancesByUserId);
   
+  app.get('/api/appearances/:id/accept', appearanceController.acceptAppearance);
   
   app.get('/home/appearances/edit_appearance/:id', appearanceController.getAppearanceById);
 }

@@ -109,8 +109,12 @@ $(document).ready(function(){
               appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
               appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
               
+              
+              appearanceTemp.find('.appearance_search_result_accept').attr('href', '/api/appearances/' + appearance._id + '/accept');              
+              
               $('.appearance_search_results').append(appearanceTemp);
-            
+              $('.collapsible').collapsible();
+
             }
 
           } else {
@@ -135,6 +139,9 @@ $(document).ready(function(){
               appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
               appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
               appearanceTemp.find('.appearance_search_result_instruction').text(appearance.instructions);
+              
+              appearanceTemp.find('.appearance_search_result_accept').attr('href', '/api/appearances/' + appearance._id + '/accept');              
+
               
               $('.appearance_search_results').append(appearanceTemp);
               $('.collapsible').collapsible();

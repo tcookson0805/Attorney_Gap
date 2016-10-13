@@ -95,6 +95,25 @@ var userSchema = new Schema({
   
   acceptedAppearances: {
     type: Array
+  },
+  
+  messages: {
+    
+    pendingAppearances: {
+     
+     pendingRequestedAppearances: [{
+       appearanceId: {
+        type: String
+       }
+     }],
+     
+     pendingAcceptedAppearance: [{
+       appearanceId: {
+        type: String
+       }
+     }], 
+      
+    }
   }
 });
 
