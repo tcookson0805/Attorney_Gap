@@ -102,7 +102,7 @@ $(document).ready(function(){
               appearanceTemp.find('.appearance_search_result_caseType').text(appearance.caseType);
               appearanceTemp.find('.appearance_search_result_caseHeader').text(appearance.caseHeader);
               appearanceTemp.find('.appearance_search_result_caseNumber').text(appearance.caseNumber);
-              appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate);
+              appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate.slice(0,10));
               appearanceTemp.find('.appearance_search_result_appearanceTime').text(appearance.appearanceTime);
               appearanceTemp.find('.appearance_search_result_clientType').text(appearance.clientInfo.clientType);
               appearanceTemp.find('.appearance_search_result_clientName').text(appearance.clientInfo.name);
@@ -128,15 +128,16 @@ $(document).ready(function(){
               appearanceTemp.find('.appearance_search_result_caseType').text(appearance.caseType);
               appearanceTemp.find('.appearance_search_result_caseHeader').text(appearance.caseHeader);
               appearanceTemp.find('.appearance_search_result_caseNumber').text(appearance.caseNumber);
-              appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate);
+              appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate.slice(0,10));
               appearanceTemp.find('.appearance_search_result_appearanceTime').text(appearance.appearanceTime);
               appearanceTemp.find('.appearance_search_result_clientType').text(appearance.clientInfo.clientType);
               appearanceTemp.find('.appearance_search_result_clientName').text(appearance.clientInfo.name);
               appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
               appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
+              appearanceTemp.find('.appearance_search_result_instruction').text(appearance.instructions);
               
               $('.appearance_search_results').append(appearanceTemp);
-
+              $('.collapsible').collapsible();
             }
           }
 
@@ -148,20 +149,24 @@ $(document).ready(function(){
   });
   
   // 
-  
 
-  // $('body').on('click', '.appearance_search_result', function() {
 
-  //   var box = $(this).find('.appearance_search_result_box');
-    
-  //   if(box.is(':hidden')){
-  //     box.slideDown('slow');
-  //   }else{
-  //     box.slideUp('slow');
-  //   }
+
+  $('body').on('click', '.appearance_search_result', function() {
 
     
-  // });
+
+
+    // var box = $(this).find('.appearance_search_result_box');
+    
+    // if(box.is(':hidden')){
+    //   box.slideDown('slow');
+    // }else{
+    //   box.slideUp('slow');
+    // }
+
+    
+  });
   
   
   // DELETING REQUESTED APPEARANCE FROM APPEARANCES.EJS

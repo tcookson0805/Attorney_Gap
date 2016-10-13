@@ -44,7 +44,7 @@ module.exports = {
           zip: req.body.court_zip
         }
       },
-      miscellaneous_info: req.body.miscellaneous_info
+      instructions: req.body.instructions
     });
         
     newAppearance.save(function(err, appearance) {
@@ -136,9 +136,6 @@ module.exports = {
     
   },
   
-  something : function(req, res, next) {
-    console.log(req.body);
-  },
   
   getAppearanceById : function(req, res, next) {
     

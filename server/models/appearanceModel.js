@@ -132,7 +132,7 @@ var appearanceSchema = new Schema({
     
   },
   
-  miscellaneous_info: {
+  instructions: {
     type: String
   }
 

@@ -58,6 +58,9 @@ div.picker__date-display {
   color: #505050;
 }
 
+/* UNIVERSAL MATERIALIZE OVERRIDES*/
+
+
 
 /* NAV BAR */
 
@@ -172,6 +175,10 @@ div.picker__date-display {
 
 .user_nav {
 
+}
+
+.user_nav_logo {
+  margin-left: 1em;
 }
 
 /* SIGNUP STUFF */
@@ -327,27 +334,39 @@ div.picker__date-display {
   padding: 0;
 }
 
+.appearance_search_result_headline {
+  background-color: #ffab40;
+  background: linear-gradient( rgba(255, 171, 64, 1), rgba(255, 171, 64, 0.8) )
+}
+
+.appearance_result_box {
+  padding-left: 2em;
+  background-color: white;
+}
+
 .appearance_search_result_tease {
   margin: 0;
   padding: 0;
 }
 
 .appearance_search_result_box {
-  margin: 0;
-  padding: 0;
-  display: none;
+  margin: 1em;
 }
 
 .appearance_search_result_info {
   font-weight: bold;
+  padding-left: 2em;
 }
 
 .appearance_search_result_info span {
   font-weight: normal;
 }
- .x { 
-  padding: 0;
- }
+
+
+.appearance_search_result_action {
+  border-top: 0.1em solid black;
+}
+
 
 /* APPEARANCES*/
 
@@ -359,7 +378,7 @@ div.picker__date-display {
   margin-bottom: 2em;
 }
 
-.requested_appearance_box, .accepted_appearance_box {
+.requested_appearance_box, .accepted_appearance_box,  {
   padding-left: 2em;
   background-color: white;
 }
