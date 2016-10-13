@@ -72,11 +72,6 @@ app.get('/home/messages', function(req, res) {
   res.render('pages/messages', {user: req.user});
 });
 
-// app.get('/home/appearance_search', function(req, res) {
-//   res.render('pages/appearance_search', req.user);
-// });
-
-
 
 mongoose.connect(config.dbConnectionString());
 
