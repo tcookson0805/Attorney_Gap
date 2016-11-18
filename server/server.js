@@ -53,6 +53,7 @@ app.get('/signup', function(req, res) {
 });
 
 app.get('/home/profile', function(req, res) {
+  console.log('UUUUSSSEERRRR', req.user); 
   res.render('pages/profile', {user: req.user});
 });
 

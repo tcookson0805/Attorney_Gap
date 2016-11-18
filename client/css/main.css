@@ -1,3 +1,7 @@
+
+
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -13,7 +17,10 @@ body {
 }
 
 
-/* UNIVERSAL CLASSES */
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |         UNIVERSAL CLASSES       |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
 
 
 .hidden {
@@ -58,11 +65,42 @@ div.picker__date-display {
   color: #505050;
 }
 
-/* UNIVERSAL MATERIALIZE OVERRIDES*/
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    | UNIVERSAL MATERIALIZE OVERRIDES |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .input-field input[type=password]:focus + label {
+     color: #000;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus,  .input-field input[type=password]:focus {
+ border-bottom: 1px solid #000;
+ box-shadow: 0 1px 0 0 #000;
+}
+
+.datepicker {
+  color: black;
+}
+
+.card-content {
+    background: no-repeat url('../images.png') 0 0;
+  background-color: #EBEBEB;
+  background-repeat: repeat;
+}
 
 
 
-/* NAV BAR */
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |          NAV BAR                |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .nav_bar {
   display: inline-block;
@@ -137,7 +175,6 @@ div.picker__date-display {
   letter-spacing: 0.2em;
 }
 
-
 .home_links a:link {
   color: black;
 }
@@ -171,17 +208,50 @@ div.picker__date-display {
 }
 
 
-/* USER NAV */
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |            USER NAV             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .user_nav {
 
 }
 
 .user_nav_logo {
-  margin-left: 1em;
+  margin-left: 2em;
 }
 
-/* SIGNUP STUFF */
+.user_nav_logo a:link {
+  color: black;
+}
+
+.user_nav_logo a:visited {
+  color: black;
+}
+
+.user_nav_logo a:hover {
+  color: black;
+}
+
+.user_nav_logo a:active {
+  color: black;
+} 
+
+
+.user_nav_button {
+  color: white;
+}
+
+
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              SIGNUP             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
 
 
 .signup_headline {
@@ -210,7 +280,13 @@ div.picker__date-display {
 }
 
 
-/* LOGIN STUFF */
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              LOGIN              |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .login_headline {
   margin: 1em auto;
@@ -233,7 +309,14 @@ div.picker__date-display {
   border-left: 0.1em solid white;
 }
 
-/* HOME STUFF */
+
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              HOME               |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .home {
   color: black;
@@ -243,7 +326,12 @@ div.picker__date-display {
 }
 
 
-/* Create Appearance */
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        CREATE APPEARANCES       |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .create_appearance {
   color: black;
@@ -261,7 +349,13 @@ div.picker__date-display {
 }
 
 
-/* PROFILE */
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              PROFILE             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .profile_headline {
   margin: 0.2em;
@@ -288,7 +382,12 @@ div.picker__date-display {
 }
 
 
-/* APPEARANCE SEARCH */
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        APPEARANCE SEARCH        |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 /* overriding materialize height */
 .select-wrapper input.select-dropdown {
@@ -321,7 +420,13 @@ div.picker__date-display {
   line-height: 5em;
 }
 
-/* APPEARANCE SEARCH RESULTS */
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |    APPEARANCE SEARCH RESULTS    |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
 
 .appearance_search_results {
   height: 40em;
@@ -368,7 +473,12 @@ div.picker__date-display {
 }
 
 
-/* APPEARANCES*/
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |           APPEARANCES           |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
 
 .appearance_header {
   margin: 1em auto;
@@ -398,8 +508,11 @@ div.picker__date-display {
 }
 
 
-/* NAVIGATION FOR USER */
 
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        NAVIGATION FOR USERS     |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
 
 
 .nav_user_account_link {
@@ -408,31 +521,14 @@ div.picker__date-display {
 }
 
 
-/* Date Picker */
-
-.datepicker {
-  color: black;
-}
-
-
-.card-content {
-    background: no-repeat url('../images.png') 0 0;
-  background-color: #EBEBEB;
-  background-repeat: repeat;
-}
 
 
 
 
- /* label focus color */
-.input-field input[type=text]:focus + label {
-     color: #000;
-}
-/* label underline focus color */
- .input-field input[type=text]:focus {
-   border-bottom: 1px solid #000;
-   box-shadow: 0 1px 0 0 #000;
- }
+
+
+
+
 
 
 

@@ -22,7 +22,7 @@
       
       <div class='col s10 offset-s1'>
       
-      <form action="/api/users/<%= _id %>" method="post">
+      <form action="/api/users/<%= user._id %>" method="post">
       
         <div class='row card-panel hoverable'>
         
@@ -34,13 +34,13 @@
             <div class='row'>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="firstName" type="text" class="validate" name="firstName" value='<%= firstName%>'>
+                  <input id="firstName" type="text" class="validate" name="firstName" value='<%= user.firstName%>'>
                   <label for="firstName">First Name</label>
                 </div>
               </div>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="lastName" type="text" class="validate" name="lastName" value='<%= lastName%>'>
+                  <input id="lastName" type="text" class="validate" name="lastName" value='<%= user.lastName%>'>
                   <label for="lastName">Last Name</label>
                 </div>
               </div>
@@ -48,13 +48,13 @@
             <div class='row'>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="email" type="text" class="validate" name="email" value='<%= email %>'>
+                  <input id="email" type="text" class="validate" name="email" value='<%= user.email %>'>
                   <label for="email">Email</label>
                 </div>
               </div>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="firmName" type="text" class="validate" name="firmName" value='<%= firmName %>'>
+                  <input id="firmName" type="text" class="validate" name="firmName" value='<%= user.firmName %>'>
                   <label for="firmName">Firm Name</label>
                 </div>
               </div>
@@ -71,13 +71,13 @@
             <div class='row'>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="phone" type="text" class="validate" name="phone" value='<%= phone %>'>
+                  <input id="phone" type="text" class="validate" name="phone" value='<%= user.phone %>'>
                   <label for="phone">Phone</label>
                 </div>
               </div>
               <div class='col s6'>
                 <div class="input-field">
-                  <input id="fax" type="text" class="validate" name="fax" value='<%= fax %>'>
+                  <input id="fax" type="text" class="validate" name="fax" value='<%= user.fax %>'>
                   <label for="fax">Fax</label>
                 </div>
               </div>
@@ -94,21 +94,21 @@
           <div class='col s8'>
             <div class='row'>
               <div class="input-field col s6">
-                <input id="street" type="text" class="validate" name="address[street]" value='<%= address.street %>'>
+                <input id="street" type="text" class="validate" name="address[street]" value='<%= user.address.street %>'>
                 <label for="street">Street</label>
               </div>
               <div class="input-field col s6">
-                <input id="city" type="text" class="validate" name="address[city]" value='<%= address.city %>' >
+                <input id="city" type="text" class="validate" name="address[city]" value='<%= user.address.city %>' >
                 <label for="city">City</label>
               </div>
             </div>
             <div class='row'>
               <div class="input-field col s6">
-                <input id="state" type="text" class="validate" name="address[state]" value='<%= address.state %>'>
+                <input id="state" type="text" class="validate" name="address[state]" value='<%= user.address.state %>'>
                 <label for="state">State</label>
               </div>
               <div class="input-field col s6">
-                <input id="zip" type="text" class="validate" name="address[zip]" value='<%= address.zip %>' >
+                <input id="zip" type="text" class="validate" name="address[zip]" value='<%= user.address.zip %>' >
                 <label for="zip">Zip</label>
               </div>
             </div>
@@ -133,7 +133,7 @@
               </div>
               <div class="col s6">
                 <ul>
-                    <% statesLicensed.forEach(function(state) { %>
+                    <% user.statesLicensed.forEach(function(state) { %>
                         <li><%= state.state %> : <%= state.barNumber %></li>
                     <% }); %>
                 </ul>

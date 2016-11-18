@@ -1,5 +1,7 @@
   
-$(document).ready(function(){
+$(document).ready(function() {
+  
+  
   
   $('.chips').material_chip();
   $('.chips-initial').material_chip({
@@ -89,6 +91,7 @@ $(document).ready(function(){
           
           console.log(appearance);
           
+          
           if(date) {
             
               if(appearance.courtInfo.courtAddress.state === state && appearance.courtInfo.courtAddress.county === county && appearance.appearanceDate === date) {
@@ -126,7 +129,6 @@ $(document).ready(function(){
               appearanceTemp.removeClass('appearance_search_result_temp');
               appearanceTemp.addClass(('appearance_search_result'));
 
-              console.log(appearance.clientInfo.name);
                           
               appearanceTemp.find('.appearance_search_result_appearanceType').text(appearance.appearanceType);
               appearanceTemp.find('.appearance_search_result_caseType').text(appearance.caseType);
@@ -139,7 +141,6 @@ $(document).ready(function(){
               appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
               appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
               appearanceTemp.find('.appearance_search_result_instruction').text(appearance.instructions);
-              
               appearanceTemp.find('.appearance_search_result_accept').attr('href', '/api/appearances/' + appearance._id + '/accept');              
 
               
@@ -155,26 +156,7 @@ $(document).ready(function(){
     
   });
   
-  // 
 
-
-
-  $('body').on('click', '.appearance_search_result', function() {
-
-    
-
-
-    // var box = $(this).find('.appearance_search_result_box');
-    
-    // if(box.is(':hidden')){
-    //   box.slideDown('slow');
-    // }else{
-    //   box.slideUp('slow');
-    // }
-
-    
-  });
-  
   
   // DELETING REQUESTED APPEARANCE FROM APPEARANCES.EJS
   
@@ -192,7 +174,7 @@ $(document).ready(function(){
       url: URL
     })
     
-  })
+  });
 
 });
   
