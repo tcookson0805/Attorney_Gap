@@ -75,7 +75,7 @@ app.get('/home/messages', function(req, res) {
 });
 
 
-mongoose.connect(config.dbConnectionString());
+mongoose.connect(dbConnectionString);
 
 
 // routes
