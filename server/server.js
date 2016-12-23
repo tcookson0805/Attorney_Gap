@@ -7,8 +7,8 @@ var mongoose = require('mongoose');
 // var morgan = require('morgan');
 // var cookieParser = require('cookie-parser');
 
-var config = require('./config/config') || ''
-var dbConnectionString = process.env.DB_CONNECTION_STRING || config.dbConnectionString()
+// var config = require('./config/config') || ''
+var dbConnectionString = process.env.DB_CONNECTION_STRING
 
 var port = process.env.PORT || 8080;
 
