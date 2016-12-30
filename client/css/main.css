@@ -1,7 +1,3 @@
-
-
-
-
 html, body {
   height: 100%;
   margin: 0;
@@ -22,6 +18,18 @@ body {
 /*/////////    |         UNIVERSAL CLASSES       |    ////////////*/
 /*/////////     ---------------------------------     ////////////*/
 
+.full-width {
+  max-width:100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.full-width-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 3em;
+}
 
 .hidden {
   display: none;
@@ -399,6 +407,7 @@ div.picker__date-display {
   background-color: white;
   height: 5em;
   padding: 0 2em;
+  margin-top: 2em;
 }
 
 .appearance_search_state {
