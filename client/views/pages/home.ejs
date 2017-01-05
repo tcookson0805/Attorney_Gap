@@ -8,22 +8,25 @@
 <body>
   
   
-  <div class='container hero'>
+  <div class='hero'>
   
     <div>
       <% include ../partials/user_nav %>
     </div>
     
-    <div>
-      <% include ../partials/user_appearance_search_nav.ejs %>
-    </div>
+<!--     <div>
+      include ../partials/user_appearance_search_nav.ejs 
+    </div> -->
     
-    <div class='row'>
+    <div class='row main'>
       <div class='col s12'>
-        <div class='card-panel hoverable'>
+        <div class='card-panel hoverable' style="padding-top: 0em">
+          <div>
+            <% include ../partials/user_appearance_search_nav.ejs %>
+          </div>
           <div class='row'>
             <div class='col s12'>
-              <div class='appearance_search_results'></div>
+              <div class='row appearance_search_results'></div>
             </div>
           </div>
         </div>

@@ -13,7 +13,6 @@ body {
 }
 
 
-
 /*/////////     ---------------------------------     ////////////*/
 /*/////////    |         UNIVERSAL CLASSES       |    ////////////*/
 /*/////////     ---------------------------------     ////////////*/
@@ -38,6 +37,12 @@ body {
 .hero {
   color: black;
   padding-top: 2em;
+}
+
+.main {
+  margin-top: 2em;
+  height: 100%;
+  padding: 0;
 }
 
 a:link {
@@ -162,15 +167,14 @@ div.picker__date-display {
   color: blue;
 }
 
-
-.container {
-  border-top: 0.1em solid white;
+.home_headline {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
 }
 
-
-.home_headline {
-  display: inline-block;
-  margin: 1.5em auto;
+section {
+  border: 0.1em solid black;
 }
 
 .home_info {
@@ -181,6 +185,7 @@ div.picker__date-display {
   margin: 2em;
   font-size: 1.5em;
   letter-spacing: 0.2em;
+  text-align: center;
 }
 
 .home_links a:link {
@@ -227,6 +232,10 @@ div.picker__date-display {
 .user_nav {
   background-color: black;
   color: white;
+}
+
+.user_nav_dropdown {
+
 }
 
 .user_nav_logo {
@@ -331,7 +340,7 @@ div.picker__date-display {
 
 .home {
   color: black;
-  padding-top: 3em;
+
   background-color: none;
   
 }
@@ -410,7 +419,7 @@ div.picker__date-display {
   background-color: white;
   height: 5em;
   padding: 0 2em;
-  margin-top: 2em;
+/*  margin-top: 2em;*/
 }
 
 .appearance_search_state {
@@ -484,6 +493,58 @@ div.picker__date-display {
   border-top: 0.1em solid black;
 }
 
+.search_result {
+  min-width: 25em;
+}
+
+.search_result_info {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.search_result_appearanceDate {
+  position: absolute;
+  background-color: black;
+  margin-left: 1em;
+  padding: 1em;
+  color: white;
+  z-index: 1000;
+  border: 0.1em solid red;
+}
+
+.search_result_appearanceNew {
+  color: blue;
+}
+
+.search_result_appearanceDay {
+  letter-spacing: 0.1em;  
+}
+
+.search_result_appearanceYear {
+  letter-spacing: 0.3em;
+}
+
+.search_result_accept_row {
+
+}
+
+.search_result_info {
+  font-weight: bold;
+}
+
+.search_result_info > div {
+  margin-left: 3em;
+  font-weight: normal;
+}
+
+.search_result_courthouse {
+  max-height: 10em;
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) )
+}
+
+.search_result_courthouse img {
+  max-height: 10em;
+}
 
 
 
