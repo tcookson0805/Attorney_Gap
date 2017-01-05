@@ -225,33 +225,36 @@ div.picker__date-display {
 
 
 .user_nav {
-
+  background-color: black;
+  color: white;
 }
 
 .user_nav_logo {
+  color: white;
   margin-left: 2em;
 }
 
-.user_nav_logo a:link {
-  color: black;
+.user_nav a:link {
+  color: white;
 }
 
-.user_nav_logo a:visited {
-  color: black;
+.user_nav a:visited {
+  color: white;
 }
 
-.user_nav_logo a:hover {
-  color: black;
+.user_nav a:hover {
+  color: white;
 }
 
-.user_nav_logo a:active {
-  color: black;
+.user_nav a:active {
+  color: white;
 } 
 
 
 .user_nav_button {
   color: white;
 }
+
 
 
 
