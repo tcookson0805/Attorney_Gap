@@ -2,23 +2,20 @@
 <!-- views/partials/user_nav.ejs -->
     
     
-    <nav class='white full-width-content'>
+    <nav class='full-width-content user_nav'>
       <div class="nav-wrapper">
         <div class='user_nav_logo'>
-          <a href='/home' class='brand-logo'>Home</a>
+          <a href='/home' class='brand-logo'>Attorney Gap</a>
         </div>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/home/create_appearance" class='waves-effect waves-light btn grey darken-1'>Create New Appearance</a></li>
-          <li><a href="/home/messages" class='waves-effect waves-light btn grey darken-1'>Messages</a></li>
-<!--           <li><a href="/home/appearances" class='waves-effect waves-light btn grey darken-1'>Requested Appearances</a></li>
-          <li><a href="/home/appearances" class='waves-effect waves-light btn grey darken-1'>Accepted Appearances</a></li> -->
+          <li><a href="/home/create_appearance" class='waves-effect waves-light btn blue darken-4'>Post Appearance</a></li>
           <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><%= user.firstName%><i class="material-icons right">arrow_drop_down</i></a>
+          <li><a class="dropdown-button white_color" href="#!" data-activates="dropdown1" data-beloworigin="true"><%= user.firstName%><i class="material-icons right">arrow_drop_down</i></a>
               <!-- Dropdown Structure -->
               <ul id="dropdown1" class="dropdown-content">
                 <li class='nav_user_account_link'><a href="/home/appearances"><span class='nav_user_account_link'>Your Appearances</span></a></li>
                 <li class='nav_user_account_link'><a href="/home/profile"><span class='nav_user_account_link'>Profile</span></a></li>
-                <li class='nav_user_account_link'><a href="#!"><span class='nav_user_account_link'>Messages</span></a></li>                
+                <li class='nav_user_account_link'><a href="/home/messages"><span class='nav_user_account_link'>Messages</span></a></li>                
                 <li class="divider"></li>
                 <li class='nav_user_account_link'><a href="/login"><span class='nav_user_account_link'>Log Out</span></a></li>
               </ul>
