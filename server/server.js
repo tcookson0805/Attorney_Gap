@@ -15,9 +15,9 @@ var port = process.env.PORT || 8080;
 
 // Serving Static Files
 app.use(express.static(path.join(__dirname, '../client')));
+app.use('/jquery', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
 app.use('/materialize', express.static(path.join(__dirname, '../node_modules/materialize-css/')));
 app.use('/materialize-clock', express.static(path.join(__dirname, '../node_modules/materialize-clockpicker')));
-app.use('/jquery', express.static(path.join(__dirname, '../node_modules/jquery/dist')));
 
 // setting the path for views and the view engine
 app.set('views', path.join(__dirname + '/../client/views'))
