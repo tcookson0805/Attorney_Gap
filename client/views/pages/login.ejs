@@ -7,37 +7,37 @@
 
 <body>
   
-  <header>
-    <% include ../partials/nav_bar %>
-  </header>
   
-  <div class='container'>
+  <div>
   
     <div class='row'>
       <div class='login_headline'>Log In</div>
     </div>
     
     <div class='row'>
-      <form class='col s6 offset-s3 login_form' action="/login" method="post">
-        <div class='login_fields'>
-          <div class='row'>
-            <div class="input-field col s12">
-              <input id="email" type="text" class="validate" name="email">
-              <label for="email">Email</label>
+      <div class="col s12 m6 offset-m3">
+        <form class='login_form' action="/login" method="post">
+          <div class='login_fields'>
+            <div class='row'>
+              <div class="input-field col s12">
+                <input id="email" type="text" class="validate" name="email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="center-align">
+                <button class="btn waves-effect waves-light grey darken-1" type="submit">Submit</button>                
+              </div>
             </div>
           </div>
-          <div class='row'>
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate" name="password">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          <div class='row'>
-            <button class="center-align btn waves-effect waves-light grey darken-1" type="submit">Submit</button>
-          </div>
-        </div>
-        
-      </form>
+        </form>
+      </div>
     </div>
     
     

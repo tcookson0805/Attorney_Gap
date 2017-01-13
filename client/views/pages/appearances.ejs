@@ -22,12 +22,14 @@
           <div class='requested_appearance'>
             <div class="card horizontal">
               <div class="card-stacked">
-                <div class="card-content">                
+                <div class="card-content">
+                  <div style="font-weight:bold; text-align:center">
+                  </div>                
                   <ul class='collapsible' data-collapsible='expandable'>
                     <li>
-                      <div class="collapsible-header active requested_appearance_header">Basic Information</div>
+                      <div class="collapsible-header requested_appearance_header">Basic Information</div>
                       <div class="collapsible-body">
-                        <div class='requested_appearance_box'>  
+                        <div class='requested_appearance_box'>
                           <div class='requested_appearance_key'>Appearance Type: <span><%= request.appearanceType %></span></div>
                           <div class='requested_appearance_key'>Case Type: <span><%= request.caseType %></span></div>     
                           <div class='requested_appearance_key'>Appearance Date: <span><%= request.appearanceDate %> </span></div>
@@ -109,7 +111,7 @@
                   <div class="card-content">
                     <ul class='collapsible' data-collapsible='expandable'>
                       <li>
-                        <div class="collapsible-header active accepted_appearance_header">Basic Information</div>
+                        <div class="collapsible-header accepted_appearance_header">Basic Information</div>
                         <div class="collapsible-body">
                           <div class='accepted_appearance_box'>                   
                             <div class='accepted_appearance_key'>Appearance Type: <span><%= accepted.appearanceType %></span></div>
