@@ -186,6 +186,8 @@ section {
   font-size: 1.5em;
   letter-spacing: 0.2em;
   text-align: center;
+  border: 0.1em solid red;
+  overflow: auto;
 }
 
 .home_links a:link {
@@ -207,16 +209,12 @@ section {
 .home_signup {
   padding: 0.5em 1.5em;
   display: inline-block;
-  float: left;
-  border: 0.1em white solid;
   border-radius: 0.2em;
 }
 
 .home_signin {
   padding: 0.5em 1.5em;
   display: inline-block;
-  float: left;
-  border: 0.1em white solid;
   border-radius: 0.2em;
 }
 
@@ -450,7 +448,7 @@ section {
 
 
 .appearance_search_results {
-  height: 40em;
+  height: 44em;
   overflow: scroll;
   padding: 0 2em;
 }
@@ -504,12 +502,11 @@ section {
 
 .search_result_appearanceDate {
   position: absolute;
-  background-color: black;
+  background-color: #757575;
   margin-left: 1em;
   padding: 1em;
   color: white;
   z-index: 1000;
-  border: 0.1em solid red;
 }
 
 .search_result_appearanceNew {
@@ -546,6 +543,10 @@ section {
   max-height: 10em;
 }
 
+.search_result .card-content, .search_result .card-content div {
+  cursor: pointer;
+}
+
 
 
 /*/////////     ---------------------------------     ////////////*/
@@ -559,6 +560,11 @@ section {
 
 .requested_appearance, .accepted_appearance {
   margin-bottom: 2em;
+}
+
+.requested_appearance_top {
+  text-align: center;
+  font-weight: bold;
 }
 
 .requested_appearance_box, .accepted_appearance_box,  {
@@ -599,10 +605,15 @@ section {
 
 
 
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        RESPONSIVE FOR USERS     |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
 
 
 
+@media (max-width: 600px) {
 
+}
 
 
 
