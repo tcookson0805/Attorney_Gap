@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body>
+  
+  
+  <div class='hero'>
+  
+    <div>
+      <% include ../partials/user_nav %>
+    </div>
+    
+<!--     <div>
+      include ../partials/user_appearance_search_nav.ejs 
+    </div> -->
+    
+    <div class='main'>
+      <div class='col s12'>
+        <div class='card-panel' style="padding-top: 0em">
+          <div>
+            <% include ../partials/user_appearance_search_nav.ejs %>
+          </div>
+        </div>
+
+        <div class='col s12'>
+          <div class='row appearance_search_results'></div>
+        </div>
+
+      </div>
+    </div>
+  
+  </div>
+  
+  
+
+
+
+
+  <div>
+    <% include ../partials/templates.ejs %>
+  </div>
+          
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+  
+  
+</body>
+
+
+</html>
