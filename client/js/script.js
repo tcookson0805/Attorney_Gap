@@ -1,7 +1,5 @@
   
 $(document).ready(function() {
-  
-  $('.parallax').parallax();
 
   
   $('.chips').material_chip();
@@ -90,33 +88,52 @@ $(document).ready(function() {
         
         $.each(data, function(index, appearance) {
           
-          console.log(appearance);
-          
-          var calendar = ['n/a', 'Jan', 'Feb', 'March', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-          
+          console.log('appearance', appearance)
+
+          // appearance location, time, and type, and id
           var courtName = appearance.courtInfo.courtName;
           var place = appearance.courtInfo.courtAddress.city + ', ' + appearance.courtInfo.courtAddress.state;
           var appearanceTime = appearance.appearanceTime;
           var appearanceType = appearance.appearanceType;
+          var appearanceId = appearance._id;
           
-          var year = appearance.appearanceDate.slice(0,4);
-          var monthNum = appearance.appearanceDate.slice(5,7);          
-          var day = appearance.appearanceDate.slice(8,10);
           
-          var month = calendar[monthNum];
-          
-          var appearanceNew = 'new';
-          var appearanceDay = day + ' ' + month;
-          var appearanceYear = year;
-          
+          // grabbing date information
+          var day = appearance.appearanceDate.slice(0,3);
+          var month = appearance.appearanceDate.slice(4,7);
+          var dateNum = appearance.appearanceDate.slice(8,10);
+          var appearanceYear = appearance.appearanceDate.slice(11,15);
+          var appearanceDay = dateNum + ' ' + month;
+
+          // figuring out if appearance was posted within past 48 hours and thus 'new'
+          var now = new Date();
+          var parsed = Date.parse(now) / 1000;
+          var appDate = appearance.date.toString();
+          var appDateParsed = Date.parse(appDate) / 1000;
+          var diff = Math.round(parsed - appDateParsed);
+          var appearanceNew = diff < 172800 ? 'new' : '';
+
+          // case information
           var caseType = appearance.caseType;
           var caseHeader = appearance.caseHeader;
           var caseNumber = appearance.caseNumber;
           var clientType = appearance.clientInfo.clientType;
-          
+
+          // client information         
           var clientName = appearance.clientInfo.name;
-          var reqAttorney = appearance.reqAttorney;
-          var appearanceId = appearance._id;
+
+          // requesting attorney information
+          var reqAttorneyName = appearance.reqAttorney.firstName + ' ' + appearance.reqAttorney.lastName;
+          var reqAttorneyId = appearance.reqAttorney.id;
+          var reqAttorneyFirmName = appearance.reqAttorney.firmName;
+          var reqAttorneyEmail = appearance.reqAttorney.email;
+          var reqAttorneyPhone = appearance.reqAttorney.phone;
+          var reqAttorneyFax = appearance.reqAttorney.fax;
+          var reqAttorneyStreet = appearance.reqAttorney.address.street;
+          var reqAttorneyCity = appearance.reqAttorney.address.city;
+          var reqAttorneyState = appearance.reqAttorney.address.state;
+          var reqAttorneyZip = appearance.reqAttorney.address.zip;
+          var reqAttorneyAddress = reqAttorneyCity + ', ' + reqAttorneyState + ' ' + reqAttorneyZip;
           
           if(date) {
             
@@ -150,6 +167,7 @@ $(document).ready(function() {
 
             if(appearance.courtInfo.courtAddress.state === state && appearance.courtInfo.courtAddress.county === county) {
               
+              console.log('hey')
               var appearanceTemp = $('.search_result_temp').clone()
               appearanceTemp.removeClass('search_result_temp');
               appearanceTemp.addClass(('search_result'));
@@ -169,21 +187,18 @@ $(document).ready(function() {
               appearanceTemp.find('.search_result_clientType').text(clientType);
 
               appearanceTemp.find('.search_result_clientName').text(clientName);
-              appearanceTemp.find('.search_result_reqAttorney').text(reqAttorney);
-              appearanceTemp.find('.search_result_appearanceID').text(appearanceId);
-              
-              // appearanceTemp.find('.appearance_search_result_caseType').text(appearance.caseType);
-              // appearanceTemp.find('.appearance_search_result_caseHeader').text(appearance.caseHeader);
-              // appearanceTemp.find('.appearance_search_result_caseNumber').text(appearance.caseNumber);
-              // appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate.slice(0,10));
-              // appearanceTemp.find('.appearance_search_result_appearanceTime').text(appearance.appearanceTime);
-              // appearanceTemp.find('.appearance_search_result_clientType').text(appearance.clientInfo.clientType);
-              // appearanceTemp.find('.appearance_search_result_clientName').text(appearance.clientInfo.name);
-              // appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
-              // appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
-              // appearanceTemp.find('.appearance_search_result_instruction').text(appearance.instructions);
-              // appearanceTemp.find('.appearance_search_result_accept').attr('href', '/api/appearances/' + appearance._id + '/accept');              
 
+              appearanceTemp.find('.search_result_appearanceID').text(appearanceId);
+
+              appearanceTemp.find('.search_result_reqAttorneyName').text(reqAttorneyName);
+              appearanceTemp.find('.search_result_reqAttorneyFirmName').text(reqAttorneyFirmName);              
+              appearanceTemp.find('.search_result_reqAttorneyPhone').text(reqAttorneyPhone);
+              appearanceTemp.find('.search_result_reqAttorneyFax').text(reqAttorneyFax);
+              appearanceTemp.find('.search_result_reqAttorneyEmail').text(reqAttorneyEmail);
+              appearanceTemp.find('.search_result_reqAttorneyStreet').text(reqAttorneyStreet);
+              appearanceTemp.find('.search_result_reqAttorneyAddress').text(reqAttorneyAddress);
+
+              
               
               $('.appearance_search_results').append(appearanceTemp);
               $('.collapsible').collapsible();

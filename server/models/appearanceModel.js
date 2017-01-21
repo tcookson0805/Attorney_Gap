@@ -4,9 +4,48 @@ var Schema = mongoose.Schema;
 
 var appearanceSchema = new Schema({
   
+  reqAttorneyId: {
+    type: String
+  },
+
   reqAttorney: {
-    type: String,
-    required: true
+
+    firstName: {
+      type: String,
+    },
+    lastName: {
+      type: String
+    },
+    firmName: {
+      type: String
+    },
+    email: {
+      type: String,
+    },
+    phone: {
+      type: Number,
+    },
+    fax: {
+      type: Number,
+    },
+    address: {
+      street: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
+      state: {
+        type: String,
+      },
+      zip: {
+        type: Number
+      }
+    },
+    id: {
+      type: String,
+    }
+
   },
   
   appAttorney: {
@@ -16,55 +55,49 @@ var appearanceSchema = new Schema({
   
   caseHeader: {
     type: String,
-    required: true
+    required: false
   },
   
   caseNumber: {
     type: String,
-    required: true
+    required: false
   },
   
   caseType: {
     type: String,
-    required: true
+    required: false
   },
   
   appearanceType: {
     type: String,
-    required: true
+    required: false
   },
   
   appearanceDate: {
-    type: Date,
-    required: true
+    type: String,
+    required: false
   },
   
   appearanceTime: {
     type: String,
-    required: true
+    required: false
   },
   
   clientInfo: {
     
     name: {
       type: String,
-      required: true
+      required: false
     },
     
     clientType: {
       type: String,
-      required: true
+      required: false
     },
     
     phone: {
       type: String,
-      validate: {
-        validator: function(v) {
-          return /\d{3}-\d{3}-\d{4}/.test(v);
-        },
-        message: '{VALUE} is not a valid phone number!'
-      },
-      required: [true, 'User phone number required']
+      required: false
     },
     
     email: {
@@ -93,43 +126,53 @@ var appearanceSchema = new Schema({
     
     courtName: {
       type: String,
-      required: true
+      required: false
     },
     
     judgeName: {
       type: String,
-      required: true
+      required: false
     },
     
     courtAddress: {
       
       street: {
         type: String,
-        required: true
+        required: false
       },
       
       city: {
         type: String,
-        required: true  
+        required: false  
       },
       
       county: {
         type: String,
-        required: true
+        required: false
       },
       
       state: {
         type: String,
-        required: true
+        required: false
       },
       
       zip: {
         type: Number,
-        required: true
+        required: false
       }
       
     }
     
+  },
+
+  filled: {
+    type: Boolean,
+    default: false
+  },
+
+  date: {
+    type: Date,
+    default: Date.now
   },
   
   instructions: {

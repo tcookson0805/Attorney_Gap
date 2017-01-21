@@ -4,14 +4,21 @@ html, body {
 }
 
 body {
-/*  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),url('../images/old-courtroom-trial.jpg');
-*/  background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: black;
+  font-family: HelveticaNeue;
 }
 
+
+.background {
+  position: absolute;
+  z-index: -1000;
+  right: 0;
+  bottom: 0;
+}
 
 /*/////////     ---------------------------------     ////////////*/
 /*/////////    |         UNIVERSAL CLASSES       |    ////////////*/
@@ -36,31 +43,110 @@ body {
 
 .hero {
   color: black;
-  padding-top: 2em;
+  height: 100%;
+  overflow: auto;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.index-info {
+  height: 30em;
+/*  top: 50%;
+  margin-top: -18em;*/
+  margin-top: 5em;
+
+  font-family: HelveticaNeue;
+}
+
+
+.index-info-headline {
+  font-size: 2em;
+  margin-left: 0.5em;
+}
+
+.index-info-main {
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+.index-info-buttons {
+
+}
+
+.index-info-footer {
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+.index-info-footer span {
+  font-family: HelveticaNeue-Bold;
+}
+
+
 .main {
-  margin-top: 2em;
-  height: 100%;
+  margin-top: -2em;
+  height: 44em;
   padding: 0;
 }
 
+
+.main_profile {
+  font-size: 1em;
+}
+
+.main_profile_header {
+  font-size: 2em;
+  color: #6a717f;
+  margin-top: 1em;
+}
+
+.main_profile_info {
+  font-size: 1.25em;
+}
+
+.main_profile_edit a, .main_profile_logout a {
+  color: #4080ff !important;
+}
+
+.card .card-action .main_profile_logout a:not(.btn):not(.btn-large):not(.btn-floating), .card .card-action .main_profile_edit a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #0D47A1;
+  font-size: 1.5em;
+}
+
+.card .card-action .main_profile_logout a:not(.btn):not(.btn-large):not(.btn-floating):hover, .card .card-action .main_profile_edit a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+  color: #FFFFFF;
+  font-size: 1.5em;
+}
+
+.main_appearances_headline {
+  font-size: 2em;
+  color: #6a717f;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+}
+
+
+.profile_main {
+  height: 100%;
+}
+
 a:link {
-  color: black;
+  color: white;
 }
 
 a:visited {
-  color: black;
+  color: white;
 }
 
 a:hover {
-  color: black;
+  color: white;
 }
 
 a:active {
-  color: black;
+  color: white;
 }
-
 
 .dropdown-content li > span {
   color: black;
@@ -101,11 +187,54 @@ div.picker__date-display {
 }
 
 .card-content {
-    background: no-repeat url('../images.png') 0 0;
+/*  background: no-repeat url('../images.png') 0 0;*/
   background-color: #EBEBEB;
   background-repeat: repeat;
 }
 
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #FFFFFF;
+}
+
+input:not([type]).valid, input:not([type]):focus.valid, input[type=text].valid, 
+input[type=text]:focus.valid, input[type=password].valid, input[type=password]:focus.valid, 
+input[type=email].valid, input[type=email]:focus.valid, input[type=url].valid, input[type=url]:focus.valid, 
+input[type=time].valid, input[type=time]:focus.valid, input[type=date].valid, input[type=date]:focus.valid, 
+input[type=datetime].valid, input[type=datetime]:focus.valid, input[type=datetime-local].valid, 
+input[type=datetime-local]:focus.valid, input[type=tel].valid, input[type=tel]:focus.valid, 
+input[type=number].valid, input[type=number]:focus.valid, input[type=search].valid, 
+input[type=search]:focus.valid, textarea.materialize-textarea.valid, 
+textarea.materialize-textarea:focus.valid {
+  border-bottom: 1px solid #4080FF;
+  box-shadow: 0 1px 0 0 #4080FF;
+}
+
+
+textarea.materialize-textarea {
+  min-height: 0.5rem;
+  padding: 0;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #4080FF;
+  box-shadow: 0 1px 0 0 #4080FF;
+}
+
+.input_field {
+  margin-top: 0;
+}
 
 
 
@@ -128,7 +257,7 @@ div.picker__date-display {
   padding-top: 3em;
   color: black;
   font-size: 1.5em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: HelveticaNeue-Bold;
   letter-spacing: 0.2em;
 }
 
@@ -186,7 +315,6 @@ section {
   font-size: 1.5em;
   letter-spacing: 0.2em;
   text-align: center;
-  border: 0.1em solid red;
   overflow: auto;
 }
 
@@ -207,18 +335,21 @@ section {
 }
 
 .home_signup {
-  padding: 0.5em 1.5em;
-  display: inline-block;
+  padding: 0.5em;
+  margin: 1em;
   border-radius: 0.2em;
+  background-color: #4080ff;
+  color: white;
 }
 
 .home_signin {
-  padding: 0.5em 1.5em;
-  display: inline-block;
+  padding: 0.5em;
+  margin: 1em;
   border-radius: 0.2em;
+  background-color: white;
+  border: 0.15em solid #4080ff;
+  color: #4080ff;
 }
-
-
 
 
 /*/////////     ---------------------------------     ////////////*/
@@ -228,18 +359,30 @@ section {
 
 
 .user_nav {
-  background-color: black;
+  /*background-color: #444C5C;*/
+  background-color: #2A3132;
+  /*background-color: black;*/
+
   color: white;
+  min-height: 5em;
 }
 
-.user_nav_dropdown {
-
-}
 
 .user_nav_logo {
   color: white;
-  margin-left: 2em;
+  font-size: 3em;
+/*  padding-top: 0.5em;
+  padding-bottom: 0.5em;*/
 }
+
+.user_nav_links {
+
+}
+
+.user_nav_links a {
+  margin-top: 1.25em;
+}
+
 
 .user_nav a:link {
   color: white;
@@ -273,9 +416,8 @@ section {
 
 
 .signup_headline {
-  margin: 1em auto;
-  font-size: 3em;
-  letter-spacing: 0.2em;
+  margin-top: 2em;
+  font-size: 2em;
   text-align: center;
 }
 
@@ -307,9 +449,8 @@ section {
 
 
 .login_headline {
-  margin: 1em auto;
-  font-size: 3em;
-  letter-spacing: 0.2em;
+  margin-top: 2em;
+  font-size: 2em;
   text-align: center;
 }
 
@@ -320,11 +461,15 @@ section {
 }
 
 .login_fields {
-  padding: 2em;
+  padding: 1em;
 }
 
 .login_info {
   border-left: 0.1em solid white;
+}
+
+.login_submit, .login_submit:hover {
+  background-color: #4080ff;
 }
 
 
@@ -338,9 +483,7 @@ section {
 
 .home {
   color: black;
-
   background-color: none;
-  
 }
 
 
@@ -356,17 +499,33 @@ section {
   background-color: white;
 }
 
-.create_appearance_card {
-  padding: 1em;
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        EDIT APPEARANCES         |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.edit_appearance_headline, .create_appearance_headline, .profile_headline {
+  font-size: 3em;
+  color: #6a717f;
+  margin-bottom: 0.8em;
 }
 
-.create_appearance_headline {
-  text-align: center;
-  font-size: 2em;
-  margin: 1em;
+
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        EDIT PROFILE             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+.btn, .btn-large {
+  background-color: #4080FF;
 }
 
-
+.btn:hover, .btn-large:hover {
+  background-color: #0D47A1;
+}
 
 
 /*/////////     ---------------------------------     ////////////*/
@@ -374,10 +533,6 @@ section {
 /*/////////     ---------------------------------     ////////////*/
 
 
-
-.profile_headline {
-  margin: 0.2em;
-}
 
 .profile_address {
   margin-left: 2em;
@@ -459,7 +614,7 @@ section {
 }
 
 .appearance_search_result_headline {
-  background-color: #ffab40;
+  background-color: #FFFFFF;
   background: linear-gradient( rgba(255, 171, 64, 1), rgba(255, 171, 64, 0.8) )
 }
 
@@ -491,16 +646,20 @@ section {
   border-top: 0.1em solid black;
 }
 
-.search_result {
+.search_result, .requested_appearance {
   min-width: 25em;
 }
 
-.search_result_info {
+.search_result_info, .requested_appearance {
   font-weight: bold;
   font-size: 1em;
 }
 
-.search_result_appearanceDate {
+.search_result_info > div, .requested_appearance > div {
+  font-weight: normal;
+}
+
+.search_result_appearanceDate, .requested_appearanceDate {
   position: absolute;
   background-color: #757575;
   margin-left: 1em;
@@ -509,41 +668,40 @@ section {
   z-index: 1000;
 }
 
-.search_result_appearanceNew {
+.search_result_appearanceNew, .requested_appearanceNew {
   color: blue;
 }
 
-.search_result_appearanceDay {
+.search_result_appearanceDay, .requested_appearanceDay {
   letter-spacing: 0.1em;  
 }
 
-.search_result_appearanceYear {
+.search_result_appearanceYear, .requested_appearanceYear {
   letter-spacing: 0.3em;
 }
 
-.search_result_accept_row {
+.search_result_accept_row, .requested_accept_row {
 
 }
 
-.search_result_info {
+.search_result_info, .requested_info {
   font-weight: bold;
 }
 
-.search_result_info > div {
-  margin-left: 3em;
+.search_result_info > div, .requested_info > div {
   font-weight: normal;
 }
 
-.search_result_courthouse {
-  max-height: 10em;
+.search_result_courthouse, .requested_courthouse {
+  max-height: 12em;
   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) )
 }
 
-.search_result_courthouse img {
-  max-height: 10em;
+.search_result_courthouse img, .requested_courthouse img {
+  max-height: 12em;
 }
 
-.search_result .card-content, .search_result .card-content div {
+.search_result .card-content, .search_result .card-content div, .requested .card-content, .requested .card-content div  {
   cursor: pointer;
 }
 
@@ -588,6 +746,68 @@ section {
 
 
 
+.requested_filled_info {
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+}
+
+.requested_filled_box {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+  height: 1.5em;
+  width: 1.5em;
+  margin-top: 0.4em;
+}
+
+[type="checkbox"]:checked + label:before {
+  height: 1.5em;
+  border-right: 2px solid #0D47A1;
+  border-bottom: 2px solid #0D47A1;
+}
+
+.card .card-action {
+  padding: 1em;
+}
+
+.card-action {
+  overflow: auto;
+}
+
+.card-action > .row {
+  margin-bottom: 0;
+}
+
+/*.card-action .btn {
+  background-color: #0D47A1;
+}*/
+
+.card-action .btn:hover {
+  background-color: #0D47A1;
+  color: #FFFFFF;
+}
+
+.card-action .btn a:hover {
+  color: #FFFFFF;
+}
+
+.requested_action {
+  font-size: 1em;
+}
+
+/*.requested_action_edit {
+  background-color: #757575;
+}*/
+
+
+.blue {
+  background-color: blue;
+}
+
+
 
 /*/////////     ---------------------------------     ////////////*/
 /*/////////    |        NAVIGATION FOR USERS     |    ////////////*/
@@ -598,6 +818,7 @@ section {
   color: black;
   font-size: 0.8em;
 }
+
 
 
 

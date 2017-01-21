@@ -7,32 +7,39 @@
 
 <body>
   
+
+
+  <div class="background">
+    <img src="../../images/Homepage-Graphic.png" alt="">
+  </div>
   
-  <div>
-  
-    <div class='row'>
-      <div class='login_headline'>Log In</div>
+  <div class='hero'>
+
+    <div>
+      <% include ../partials/nav_bar %>
     </div>
-    
+      
     <div class='row'>
-      <div class="col s12 m6 offset-m3">
-        <form class='login_form' action="/login" method="post">
+      <div class="col s12 m5 offset-m1">
+        <div class='login_headline'>Log In</div>
+
+        <form class='login_form transparent' action="/login" method="post">
           <div class='login_fields'>
             <div class='row'>
               <div class="input-field col s12">
-                <input id="email" type="text" class="validate" name="email">
+                <input id="email" type="text" class="validate x" name="email">
                 <label for="email">Email</label>
               </div>
             </div>
             <div class='row'>
               <div class="input-field col s12">
-                <input id="password" type="password" class="validate" name="password">
+                <input id="password" type="password" class="validate x" name="password">
                 <label for="password">Password</label>
               </div>
             </div>
             <div class='row'>
               <div class="center-align">
-                <button class="btn waves-effect waves-light grey darken-1" type="submit">Submit</button>                
+                <button class="btn waves-effect waves-light login_submit" type="submit">Submit</button>           
               </div>
             </div>
           </div>
@@ -43,7 +50,7 @@
     
   </div>
   
-          
+    
   <footer>
     <% include ../partials/footer %>
   </footer>

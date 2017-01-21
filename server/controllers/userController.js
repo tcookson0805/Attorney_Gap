@@ -11,6 +11,15 @@ module.exports = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
+      firmName: req.body.firmName,
+      phone: req.body.phone,
+      fax: req.body.fax,
+      address: {
+        street: req.body.street,
+        city: req.body.city,
+        state: req.body.state,
+        zip: req.body.zip
+      }
     });
     
     newUser.password = newUser.generateHash(req.body.password);

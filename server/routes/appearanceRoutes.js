@@ -25,6 +25,8 @@ module.exports = function(app) {
   // route for accepting appearance
   app.get('/home/appearances', appearanceController.getAppearancesByUserId);
   
+  app.get('/home', appearanceController.getRequestedAppearancesByUserId);
+
   app.get('/api/appearances/:id/accept', appearanceController.acceptAppearance);
   
   app.get('/home/appearances/edit_appearance/:id', appearanceController.getAppearanceById);

@@ -7,180 +7,194 @@
 
 <body>
   
-  <div class='container hero'>
+  <div class='hero'>
     
     <div>
       <% include ../partials/user_nav%>
     </div>
 
     <div class='row'>
-      <div class='col s12 create_appearance_card'>
-        <h2 class='center-align'>Edit Appearance</h5>
+      <div class='col s12'>
+        <div class='center-align edit_appearance_headline'>Edit Appearance</div>
 
         <form action="/api/appearances/<%= appearance._id %>" method="post">
       
-          <div class='card-panel hoverable'>            
-            <div class='row create_appearance_headline'>
-              Case Information
+          <div class='row card-panel'>            
+            <div class='col s12 m2'>
+              <h5 class="center-align">Case Info</h5>
             </div>
-    
-          
-            <div class='row'>
-            
-             <div class="input-field col s4">
-               <input id="case_header" type="text" class="validate" name="case_header" value='<%= appearance.caseHeader %>'>
-               <label for="case_header">Case Header</label>
-             </div>
-             
-             <div class="input-field col s4">
-               <input id="case_number" type="text" class="validate" name="case_number" value='<%= appearance.caseNumber %>'>
-               <label for="case_number">Case Number</label>
-             </div>
-             
-             <div class="input-field col s4">
-               <input id="case_type" type="text" class="validate" name="case_type" value='<%= appearance.caseType %>'>
-               <label for="case_type">Case Type</label>
-             </div>
-             
-            </div>
+            <div class='col s12 m10'>
+              <div class="row">
 
-            
-            <div class='row'>
-            
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                   <input id="case_header" type="text" class="validate" name="case_header" value='<%= appearance.caseHeader %>'>
+                   <label for="case_header">Case Header</label>
+                  </div>
+                </div>
 
-             <div class="input-field col s4">
-               <input id="appearance_type" type="text" class="validate" name="appearance_type" value='<%= appearance.appearanceType %>'>
-               <label for="appearance_type">Appearance Type</label>
-             </div>
-             
-              <div class="input-field col s4">
-                <input id="date" type="text" class="datepicker" placeholder="Appearance Date" name="appearance_date" value='<%= appearance.appearanceDate %>'>
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                   <input id="case_number" type="text" class="validate" name="case_number" value='<%= appearance.caseNumber %>'>
+                   <label for="case_number">Case Number</label>
+                  </div>
+                </div>
+
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                   <input id="case_type" type="text" class="validate" name="case_type" value='<%= appearance.caseType %>'>
+                   <label for="case_type">Case Type</label>
+                  </div>
+                </div>
+
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                   <input id="appearance_type" type="text" class="validate" name="appearance_type" value='<%= appearance.appearanceType %>'>
+                   <label for="appearance_type">Appearance Type</label>
+                  </div>
+                </div>
+
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                    <input id="date" type="text" class="datepicker" placeholder="Appearance Date" name="appearance_date" value='<%= appearance.appearanceDate %>'>
+                  </div>
+                </div>
+
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                    <input id="timepicker" class="timepicker" type="text" placeholder="Appearance Time" name="appearance_time" value='<%= appearance.appearanceTime %>'>
+                  </div>
+                </div>
               </div>
-              
-              <div class="input-field col s4">
-                <input id="timepicker" class="timepicker" type="text" placeholder="Appearance Time" name="appearance_time" value='<%= appearance.appearanceTime %>'>
-              </div>
-             
+            
             </div>
             
           </div>
+
+          <div class='row card-panel'>
+            <div class='col s12 m2 center'>
+              <h5 class="center-align">Client Info</h5>
+            </div>
+            <div class='col s12 m10'>
+              <div class='row'>
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                    <input id="client_name" type="text" class="validate" name="client_name" value='<%= appearance.clientInfo.name %>'>
+                    <label for="client_name">Client Name</label>
+                  </div>
+                </div>
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                    <input id="client_phone" type="text" class="validate" name="client_phone" value='<%= appearance.clientInfo.phone %>'>
+                    <label for="client_phone">Client Phone</label>
+                  </div>
+                </div>
+                <div class='col s12 m4'>
+                  <div class="input-field">
+                    <input id="client_email" type="text" class="validate" name="client_email" value='<%= appearance.clientInfo.email %>'>
+                    <label for="client_email">Client Email</label>
+                  </div>
+                </div>
+                <div class='col s12 m3'>
+                  <div class="input-field">
+                    <input id="client_street" type="text" class="validate" name="client_street" value='<%= appearance.clientInfo.street %>'>
+                    <label for="client_street">Street</label>
+                  </div>  
+                </div>
+                <div class='col s12 m3'>
+                  <div class="input-field">
+                    <input id="client_city" type="text" class="validate" name="client_city" value='<%= appearance.clientInfo.city %>'>
+                    <label for="client_city">City</label>
+                  </div>
+                </div>
+
+                <div class='col s12 m3'>
+                  <div class="input-field">
+                    <input id="client_state" type="text" class="validate" name="client_state" value='<%= appearance.clientInfo.state %>'>
+                    <label for="client_state">State</label>
+                  </div>
+                </div>
+                <div class='col s12 m3'>
+                  <div class="input-field">
+                    <input id="client_zip" type="text" class="validate" name="client_zip" value='<%= appearance.clientInfo.zip %>'>
+                    <label for="client_zip">Zip</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class='row card-panel'>
           
-          <div class='card-panel hoverable'>
-            <div class='row create_appearance_headline'>
-              Client Info
+            <div class='col s12 m2'>
+              <h5 class="center-align">Court Info</h5>
             </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="client_name" type="text" class="validate" name="client_name" value='<%= appearance.clientInfo.name %>'>
-                <label for="client_name">Name</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="client_type" type="text" class="validate" name="client_type" value='<%= appearance.clientInfo.clientType %>'>
-                <label for="client_type">Client Type</label>
-              </div>
-            </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="client_phone" type="text" class="validate" name="client_phone" value='<%= appearance.clientInfo.phone %>'>
-                <label for="client_phone">Phone</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="client_email" type="text" class="validate" name="client_email" value='<%= appearance.clientInfo.email %>'>
-                <label for="client_email">Email</label>
-              </div>
-            </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="client_street" type="text" class="validate" name="client_street" value='<%= appearance.clientInfo.street %>'>
-                <label for="client_street">Street</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="client_city" type="text" class="validate" name="client_city" value='<%= appearance.clientInfo.city %>'>
-                <label for="client_city">City</label>
-              </div>
-            </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="client_state" type="text" class="validate" name="client_state" value='<%= appearance.clientInfo.state %>'>
-                <label for="client_state">State</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="client_zip" type="text" class="validate" name="client_zip" value='<%= appearance.clientInfo.zip %>'>
-                <label for="client_zip">Zip</label>
-              </div>
-            </div>
-          </div>
           
-          <div class='card-panel hoverable'>
-            <div class='row create_appearance_headline'>
-              Court Info
+            <div class='col s12 m10'>
+              <div class='row'>
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_name" type="text" class="validate" name="court_name" value='<%= appearance.courtInfo.courtName %>'>
+                    <label for="court_name">Court</label>
+                  </div>  
+                </div>
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_county" type="text" class="validate" name="court_county" value='<%= appearance.courtInfo.courtAddress.county %>'>
+                    <label for="court_county">County</label>
+                  </div>  
+                </div>
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_judge" type="text" class="validate" name="court_judge" value='<%= appearance.courtInfo.judgeName %>'>
+                    <label for="court_judge">Judge</label>
+                  </div>  
+                </div>
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_street" type="text" class="validate" name="court_street" value='<%= appearance.courtInfo.courtAddress.street %>'>
+                    <label for="court_street">Street</label>
+                  </div>  
+                </div>
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_city" type="text" class="validate" name="court_city" value='<%= appearance.courtInfo.courtAddress.city %>'>
+                    <label for="court_city">City</label>
+                  </div>  
+                </div>
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_state" type="text" class="validate" name="court_state" value='<%= appearance.courtInfo.courtAddress.state %>'>
+                    <label for="court_state">State</label>
+                  </div>  
+                </div>
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_zip" type="text" class="validate" name="court_zip" value='<%= appearance.courtInfo.courtAddress.zip %>'>
+                    <label for="court_zip">Zip</label>
+                  </div>  
+                </div>
+              </div>
+            </div>            
+          </div>
+
+          <div class='row card-panel'>
+            <div class='col s12 m2'>
+              <h5 class="center-align">Notes</h5>
             </div>
-            
-            <div class='row'>
-              <div class="input-field col s4">
-                <input id="court_name" type="text" class="validate" name="court_name" value='<%= appearance.courtInfo.courtName %>'>
-                <label for="court_name">Court</label>
-              </div>
-              
-              <div class="input-field col s4">
-                <input id="court_county" type="text" class="validate" name="court_county" value='<%= appearance.courtInfo.courtAddress.county %>'>
-                <label for="court_county">County</label>
-              </div>
-              
-              <div class="input-field col s4">
-                <input id="court_judge" type="text" class="validate" name="court_judge" value='<%= appearance.courtInfo.judgeName %>'>
-                <label for="court_judge">Judge</label>
-              </div>
-            </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="court_street" type="text" class="validate" name="court_street" value='<%= appearance.courtInfo.courtAddress.street %>'>
-                <label for="court_street">Street</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="court_city" type="text" class="validate" name="court_city" value='<%= appearance.courtInfo.courtAddress.city %>'>
-                <label for="court_city">City</label>
-              </div>
-            </div>
-            
-            <div class='row'>
-              <div class="input-field col s6">
-                <input id="court_state" type="text" class="validate" name="court_state" value='<%= appearance.courtInfo.courtAddress.state %>'>
-                <label for="court_state">State</label>
-              </div>
-              
-              <div class="input-field col s6">
-                <input id="court_zip" type="text" class="validate" name="court_zip" value='<%= appearance.courtInfo.courtAddress.zip %>'>
-                <label for="court_zip">Zip</label>
+            <div class='col s12 m10'>
+              <div class="input-field">
+                <textarea id="appearance_misc" class="materialize-textarea" name="instructions" value='<%= appearance.instructions %>'></textarea>
+                <label for="appearance_misc">Write Here</label>  
               </div>
             </div>
           </div>
-          
-          <div class='card-panel hoverable'>
-            <div class='row create_appearance_headline'>
-              Miscellaneous Information
-            </div>
-            <div class='input-field col s12'>
-              <textarea id="appearance_misc" class="materialize-textarea" name="instructions" value='<%= appearance.instructions %>'></textarea>
-              <label for="appearance_misc">Write Here</label>
-            </div>
-            <div class='row'></div>
-          </div>
+
           <div class='row center-align'>
-            <button class="center-align btn waves-effect waves-light" type="submit">Submit</button>
+            <button class="btn waves-effect waves-light" type="submit">Submit</button>
           </div>
+
         </form>
-      
       
       </div>
     </div>

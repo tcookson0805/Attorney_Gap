@@ -1,27 +1,45 @@
 var AppearanceModel = require('../models/appearanceModel');
 var UserModel = require('../models/userModel');
-
+var _ = require('underscore');
 
 module.exports = {
   
   // CREATE
   
   createAppearance : function(req, res, next) {
-    
-    console.log('appearance date', req.body.appearance_date);
-    console.log('appearance time', req.body.appearance_time);
-    console.log('appearance date type', typeof req.body.appearance_date);
-    console.log('appearance time type', typeof req.body.appearance_time);
-    
-    
+
+    console.log('============')
+    console.log('req.body.userInfo', req.body.userInfo)
+    console.log('============')
+    console.log('req.session', req.session.passport)
+    console.log('============')
+    var reqAttorney = JSON.parse(req.body.userInfo);
+    console.log('req.body.appearance_date', req.body.appearance_date)
+    console.log('typeof req.body.appearance_date', typeof req.body.appearance_date)
+
+
     var newAppearance = AppearanceModel({
       
-      reqAttorney: req.session.passport.user,
+      reqAttorneyId: reqAttorney._id,
+      reqAttorney: {
+        firstName: reqAttorney.firstName,
+        lastName: reqAttorney.lastName,
+        firmName: reqAttorney.firmName,
+        email: reqAttorney.email,
+        phone: reqAttorney.phone,
+        fax: reqAttorney.fax,
+        address: {
+          street: reqAttorney.address.street,
+          city: reqAttorney.address.city,
+          state: reqAttorney.address.state,
+          zip: reqAttorney.address.zip
+        },
+      },
       caseHeader: req.body.case_header,
       caseNumber: req.body.case_number,
       caseType: req.body.case_type,
       appearanceType: req.body.appearance_type,
-      appearanceDate: new Date(req.body.appearance_date).toISOString(),
+      appearanceDate: new Date(req.body.appearance_date),
       appearanceTime: req.body.appearance_time,
       clientInfo: { 
         name: req.body.client_name,
@@ -46,6 +64,8 @@ module.exports = {
       },
       instructions: req.body.instructions
     });
+
+
         
     newAppearance.save(function(err, appearance) {
       if(err) {
@@ -68,9 +88,29 @@ module.exports = {
     });
     
   },
+
+  getRequestedAppearancesByUserId : function(req, res, next) {
+    var user = req.user
+
+    console.log('user', user)
+
+    AppearanceModel.find({reqAttorneyId: req.user._id}).exec()
+
+      .then(function(appearances) {
+        var sorted = _.sortBy(appearances, 'appearanceDate');
+        return sorted
+      })
+      .then(function(sorted) {
+        var sortedAppearances = sorted;
+        res.render('pages/home', {user: user, requestedAppearances: sortedAppearances});
+      })
+
+  },
   
   getAppearancesByUserId : function(req, res, next) {
     
+    // console.log('getAppearancesByUserId being ran')
+    // console.log(req)
     // variables to be passed in res.render
     var user = req.user
     var acceptedAppearances;
@@ -131,7 +171,10 @@ module.exports = {
         return attorneysQuery
       })
       .then(function(data) {
-        res.render('pages/appearances', {user: user, acceptedAppearances: acceptedAppearances, requestedAppearances: requestedAppearances, attorneys: attorneys});
+        res.render('pages/home', {user: user, acceptedAppearances: acceptedAppearances, requestedAppearances: requestedAppearances, attorneys: attorneys});
+        // console.log('data', data);
+        // res.send({user: user, acceptedAppearances: acceptedAppearances, requestedAppearances: requestedAppearances, attorneys: attorneys});
+
       });
     
   },
@@ -170,7 +213,7 @@ module.exports = {
       $set: req.body
     }
     
-    console.log('######', set)
+    // console.log('######', set)
     
    AppearanceModel.findOneAndUpdate({_id: req.params.id}, set, {upsert:true}, function(err, user){
       if(err){
@@ -183,8 +226,8 @@ module.exports = {
   
   acceptAppearance : function(req, res, next) {
     
-    console.log(req.user.id);
-    console.log(req.params.id);
+    // console.log(req.user.id);
+    // console.log(req.params.id);
     
     AppearanceModel.findOneAndUpdate({_id: req.params.id}, { $set: { appAttorney: req.user.id}}, {upsert: true}, function(err, app) {
       if(err) {

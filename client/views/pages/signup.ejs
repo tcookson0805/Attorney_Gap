@@ -7,54 +7,57 @@
 
 <body>
   
-  <header>
-    <% include ../partials/nav_bar %>
-  </header>
+
+  <div class="background">
+    <img src="../../images/Homepage-Graphic.png" alt="">
+  </div>
   
-  <div class='container'>
-  
-    <div class='row'>
-      <div class='signup_headline'>Sign Up</div>
+  <div class='hero'>
+
+    <div>
+      <% include ../partials/nav_bar %>
     </div>
-    
-    <div class='row'>
-      <form class='col s10 offset-s1 signup_form' action="/api/users" method="post">
-        
-        <div class='signup_fields'>
-          <div class='row'>
-            <div class="input-field col s12">
-              <input id="email" type="text" class="validate" name="email">
-              <label for="email">Email</label>
+
+    <div class="row">
+      <div class="col s12 m5 offset-m1">
+        <div class="signup_headline">Sign Up</div>
+        <form class="signup_form transparent" action="/api/users" method="post">
+          <div class="login_fields">
+            <div class='row'>
+              <div class="input-field">
+                <input id="email" type="text" class="validate" name="email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="input-field">
+                <input id="firstName" type="text" class="validate" name="firstName">
+                <label for="firstName">First Name</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="input-field">
+                <input id="lastName" type="text" class="validate" name="lastName">
+                <label for="lastName">Last Name</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="input-field">
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            
+            <div class='row'>
+              <div class="center-align">
+                <button class="btn waves-effect waves-light login_submit" type="submit">Submit</button>            
+              </div>
             </div>
           </div>
-          <div class='row'>
-            <div class="input-field">
-              <input id="firstName" type="text" class="validate" name="firstName">
-              <label for="firstName">First Name</label>
-            </div>
-          </div>
-          <div class='row'>
-            <div class="input-field">
-              <input id="lastName" type="text" class="validate" name="lastName">
-              <label for="lastName">Last Name</label>
-            </div>
-          </div>
-          <div class='row'>
-            <div class="input-field">
-              <input id="password" type="password" class="validate" name="password">
-              <label for="password">Password</label>
-            </div>
-          </div>
-          
-          <div class='row'>
-            <button class="center-align btn waves-effect waves-light" type="submit">Submit</button>
-          </div>
-        </div>
-        
-      </form>
+        </form>
+      </div>
     </div>
-    
-    
+
   </div>
   
           

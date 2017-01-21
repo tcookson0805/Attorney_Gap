@@ -14,41 +14,34 @@
     </div>
 
 
-    <div class='row main'>
+    <div class='row'>
       
       <div class='col s12'>
+      <div class='center-align profile_headline'>Profile</div>
       
       <form action="/api/users/<%= user._id %>" method="post">
       
         <div class='row card-panel hoverable'>
         
-          <div class='col s2'>
-            <h5>Basic Info</h5>
+          <div class='col s12 m2'>
+            <h5 class="center-align">Basic Info</h5>
           </div>
-          <div class='col s10'>
+          <div class='col s12 m10'>
             
             <div class='row'>
-              <div class='col s6'>
+              <div class='col s12 m4'>
                 <div class="input-field">
                   <input id="firstName" type="text" class="validate" name="firstName" value='<%= user.firstName%>'>
                   <label for="firstName">First Name</label>
                 </div>
               </div>
-              <div class='col s6'>
+              <div class='col s12 m4'>
                 <div class="input-field">
                   <input id="lastName" type="text" class="validate" name="lastName" value='<%= user.lastName%>'>
                   <label for="lastName">Last Name</label>
                 </div>
               </div>
-            </div>
-            <div class='row'>
-              <div class='col s6'>
-                <div class="input-field">
-                  <input id="email" type="text" class="validate" name="email" value='<%= user.email %>'>
-                  <label for="email">Email</label>
-                </div>
-              </div>
-              <div class='col s6'>
+              <div class='col s12 m4'>
                 <div class="input-field">
                   <input id="firmName" type="text" class="validate" name="firmName" value='<%= user.firmName %>'>
                   <label for="firmName">Firm Name</label>
@@ -60,18 +53,24 @@
         </div>
         
         <div class='row card-panel hoverable'>
-          <div class='col s2'>
-            <h5>Contact Info</h5>
+          <div class='col s12 m2 center'>
+            <h5 class="center-align">Contact Info</h5>
           </div>
-          <div class='col s10'>
+          <div class='col s12 m10'>
             <div class='row'>
-              <div class='col s6'>
+              <div class='col s12 m4'>
+                <div class="input-field">
+                  <input id="email" type="text" class="validate" name="email" value='<%= user.email %>'>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class='col s12 m4'>
                 <div class="input-field">
                   <input id="phone" type="text" class="validate" name="phone" value='<%= user.phone %>'>
                   <label for="phone">Phone</label>
                 </div>
               </div>
-              <div class='col s6'>
+              <div class='col s12 m4'>
                 <div class="input-field">
                   <input id="fax" type="text" class="validate" name="fax" value='<%= user.fax %>'>
                   <label for="fax">Fax</label>
@@ -83,27 +82,26 @@
 
         <div class='row card-panel hoverable'>
         
-          <div class='col s2'>
-            <h5>Address</h5>
+          <div class='col s12 m2'>
+            <h5 class="center-align">Address</h5>
           </div>
         
-          <div class='col s10'>
+          <div class='col s12 m10'>
             <div class='row'>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m3">
                 <input id="street" type="text" class="validate" name="address[street]" value='<%= user.address.street %>'>
                 <label for="street">Street</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m3">
                 <input id="city" type="text" class="validate" name="address[city]" value='<%= user.address.city %>' >
                 <label for="city">City</label>
               </div>
-            </div>
-            <div class='row'>
-              <div class="input-field col s6">
+
+              <div class="input-field col s12 m3">
                 <input id="state" type="text" class="validate" name="address[state]" value='<%= user.address.state %>'>
                 <label for="state">State</label>
               </div>
-              <div class="input-field col s6">
+              <div class="input-field col s12 m3">
                 <input id="zip" type="text" class="validate" name="address[zip]" value='<%= user.address.zip %>' >
                 <label for="zip">Zip</label>
               </div>
@@ -112,31 +110,7 @@
           
         </div>
         
-        <div class='row card-panel hoverable'>
-          <div class='col s2'>
-            <h5>Bar Information</h5>
-          </div>
-          <div class='col s10'>
-            <div class='row'>
-              <div class="input-field col s6">
-                <select multiple>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-              </div>
-              <div class="col s6">
-                <ul>
-                    <% user.statesLicensed.forEach(function(state) { %>
-                        <li><%= state.state %> : <%= state.barNumber %></li>
-                    <% }); %>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        
         <div class='row center-align'>
           <button class="btn waves-effect waves-light" type="submit">Submit</button>
         </div>
