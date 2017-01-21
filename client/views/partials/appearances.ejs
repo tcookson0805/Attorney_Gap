@@ -1,0 +1,159 @@
+
+
+<div class='row'>
+	<% requestedAppearances.forEach(function(request) { %>
+
+		<% console.log('======================') %>
+		<% console.log('request.appearanceDate', request.appearanceDate) %>
+		<% console.log('request.appearanceDate', typeof request.appearanceDate) %>
+
+		<% console.log('request.appearanceDate', request.appearanceDate.toString()) %>
+
+		<% console.log('======================') %>
+
+
+
+
+    <% var courtName = request.courtInfo.courtName; %>
+    <% var place = request.courtInfo.courtAddress.city + ', ' + request.courtInfo.courtAddress.state; %>
+    <% var appearanceTime = request.appearanceTime; %>
+    <% var appearanceType = request.appearanceType; %>
+    
+    <% var date = request.appearanceDate.toString(); %>
+    <% var year = date.slice(11, 15) %>
+    <% var month = date.slice(4,7) %>
+    <% var day = date.slice(8,10) %>
+    
+    <% var caseType = request.caseType; %>
+    <% var caseHeader = request.caseHeader; %>
+    <% var caseNumber = request.caseNumber; %>
+    <% var clientType = request.clientInfo.clientType;	%>
+    
+    <% var clientName = request.clientInfo.name; %>
+    <% var clientPhone = request.clientInfo.phone; %>
+    <% var clientEmail = request.clientInfo.email; %>
+    <% var clientStreet = request.clientInfo.street; %>
+    <% var clientCity = request.clientInfo.city; %>
+    <% var clientState = request.clientInfo.state; %>
+    <% var clientZip = request.clientInfo.zip; %>
+    <% var reqAttorney = request.reqAttorney; %>
+    <% var requestId = request._id;	%>
+
+	
+		<div class='col s6 requested_appearance'>
+			<div class="card sticky-action">
+			  <div class="card-image waves-effect waves-block waves-light">
+			    <div class="requested_appearanceDate">
+			        <div class="requested_appearanceNew"></div> 
+			        <div class="requested_appearanceDay"> <%= day + ' ' + month %></div>            
+			        <div class="requested_appearanceYear"><%= year %></div>            
+			    </div>
+			    <div class="activator requested_courthouse">
+			        <img src="images/butler.jpg">
+			    </div>
+			  </div>
+			  <div class="activator card-content">
+			  	<div class="row">
+						<div class="col s6">
+							<div><i class="tiny material-icons">work</i><span class="requested_info"> Case Header </span> </div>
+							<div class='requested_courtName'> <%= caseHeader %> </div>
+						</div>
+						<div class="col s6">
+							<div><i class="tiny material-icons">business</i><span class="requested_info"> Court </span> </div>
+							<div class='requested_courtName'> <%= courtName %> </div>
+						</div>
+			  	</div>
+			    <div class="row">
+			        <div class="col s6">
+			            <div><i class="tiny material-icons">schedule</i> <span class="requested_info"> Time </span></div>
+			            <div class='requested_appearanceTime'> <%= appearanceTime %> </div>
+			        </div>
+			        <div class="col s6">
+			            <div><i class="tiny material-icons">location_on</i> <span class="requested_info"> Place </span></div>
+			            <div class='requested_place'> <%= place %> </div>
+			        </div>
+			    </div>
+			    <div class="row">
+			        <div class="col s6">
+			            <div><i class="tiny material-icons">assignment</i> <span class="requested_info"> Case Number </span></div>
+			            <div class='requested_appearanceTime'> <%= caseNumber %> </div>
+			        </div>
+			        <div class="col s6">
+			            <div><i class="tiny material-icons">label</i> <span class="requested_info"> Type </span></div>
+			            <div class='requested_appearanceType'> <%= appearanceType %> </div>
+			        </div>
+			    </div>
+			  </div>
+			  <div class="card-reveal">
+					<div class="row">
+				    <span class="card-title grey-text text-darken-4"> <%= caseHeader %> <i class="material-icons right">close</i></span>
+					</div>
+
+					<div class="row">
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Case Type
+					        <div class='requested_caseType'> <%= caseType %> </div>
+					    </div>
+						</div>
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Client Type
+					        <div class='requested_clientType'> <%= clientType %> </div>
+					    </div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Client Name
+					        <div class='requested_clientName'> <%= clientName %> </div>
+					    </div>
+						</div>
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Client Phone
+					        <div class='requested_reqAttorney'> <%= clientPhone %> </div>
+					    </div>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Client Address
+					        <div class='requested_reqAttorney'> <%= clientStreet %> </div>
+					        <div class='requested_reqAttorney'> <%= clientCity + ', ' %> <%= clientState %></div>
+					        <div class='requested_reqAttorney'> <%= clientZip %> </div>
+					    </div>
+						</div>
+						<div class='col s12 m6'>
+					    <div class='requested_info'>Client Email
+					        <div class='requested_reqAttorney'> <%= clientEmail %> </div>
+					    </div>
+						</div>
+					</div>
+					
+			  </div>
+
+			  <div class="card-action">
+			  	<div class="row">
+		        <div class="col s6 center-align">
+	            <div class="requested_filled_info left">Covered</div>
+              <div class="requested_filled_box left">
+  	            <form action="/api/appearances/<%= requestId %>" method="post">
+                  <input type="checkbox" id="test6" />
+                  <label for="test6"></label>
+  	            </form>
+              </div>	
+            </div>
+            <div class='col s6 btn requested_action_edit center-align'>
+            	<a href="/home/appearances/edit_appearance/<%= requestId %>" class="waves-effect waves-light">Edit / Delete</a>
+            </div>
+			  	</div>
+				</div>
+
+			</div>
+		</div>
+
+
+<% }); %>
+
+</div>
