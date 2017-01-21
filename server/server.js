@@ -46,33 +46,36 @@ app.use(flash());
 var initPassport = require('./passport/passport_init.js');
 initPassport(passport);
 
+// rendering the index page
 app.get('/', function(req, res) {
   res.render('pages/index')
 });
 
-app.get('/about', function(req, res) {
-  res.render('pages/about');
-});
 
+// rendering the signup page
 app.get('/signup', function(req, res) {
   res.render('pages/signup');
 });
 
-app.get('/home/profile', function(req, res) {
-  console.log('UUUUSSSEERRRR', req.user); 
-  res.render('pages/profile', {user: req.user});
-});
-
+// rendering the login page
 app.get('/login', function(req, res) {
   res.render('pages/login');
 });
 
-app.get('/home', function(req, res) {
-  res.render('pages/home', {user: req.user});
+app.get('/home/profile/:id', function(req, res) {
+  console.log('UUUUSSSEERRRR', req.user); 
+  res.render('pages/profile', {user: req.user});
 });
 
+
 app.get('/home/create_appearance', function(req, res) {
+	console.log('getting create appearance page')
   res.render('pages/create_appearance', {user: req.user});
+});
+
+app.get('/home/search_appearances', function(req, res) {
+	console.log('getting search appearances page')
+	res.render('pages/search_appearances', {user: req.user});
 });
 
 app.get('/home/messages', function(req, res) {
