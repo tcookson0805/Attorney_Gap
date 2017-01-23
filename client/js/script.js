@@ -32,22 +32,9 @@ $(document).ready(function() {
   $('select').material_select();
 
 
-  // APPEARANCE SEARCH //
-  
-  // $('.appearance_search_state').on('click', '.appearance_search_state_option', function() {
-
-  //   var state = $(this).text()
-  //   $('.appearance_search_state').find('span').text(state);
-  // });
   
   
-  // $('.appearance_search_county').on('click', '.appearance_search_county_option', function() {
-  //   var county = $(this).text();
-  //   console.log(county);
-  //   $('.appearance_search_county').find('span').text(county);
-  // });
-
-  // Appearance Date Picker
+  // APPEARANCE DATE PICKER //
   
   var picker = $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -56,7 +43,7 @@ $(document).ready(function() {
   });
   
 
-  // TIME PICKER 
+  // TIME PICKER //
   
   $('#timepicker').pickatime({
     autoclose: false,
@@ -64,10 +51,9 @@ $(document).ready(function() {
   });
 
 
-  // shows search results in appearance_search.ejs
+  // APPEARANCE SEARCH
 
   $('body').on('submit','.appearance_search_form', function(e) {
-    
     
     e.preventDefault();
     
@@ -75,9 +61,6 @@ $(document).ready(function() {
     var county = $('.appearance_search_county option:selected').text();
     var date = $('.datepicker').val();
 
-    
-    console.log(picker.get('value'));
-    
     $('.appearance_search_results').children().remove()
         
     $.ajax({
@@ -85,18 +68,14 @@ $(document).ready(function() {
       url:'/api/appearances',
       success: function(data) {
         
-        
         $.each(data, function(index, appearance) {
           
-          console.log('appearance', appearance)
-
           // appearance location, time, and type, and id
           var courtName = appearance.courtInfo.courtName;
           var place = appearance.courtInfo.courtAddress.city + ', ' + appearance.courtInfo.courtAddress.state;
           var appearanceTime = appearance.appearanceTime;
           var appearanceType = appearance.appearanceType;
           var appearanceId = appearance._id;
-          
           
           // grabbing date information
           var day = appearance.appearanceDate.slice(0,3);
@@ -139,25 +118,8 @@ $(document).ready(function() {
             
               if(appearance.courtInfo.courtAddress.state === state && appearance.courtInfo.courtAddress.county === county && appearance.appearanceDate === date) {
               
-              var appearanceTemp = $('.search_result_temp').clone()
-
-              // appearanceTemp.removeClass('appearance_search_result_temp');
-              // appearanceTemp.addClass(('appearance_search_result'));
-                                        
-              // appearanceTemp.find('.appearance_search_result_appearanceType').text(appearance.appearanceType);
-              // appearanceTemp.find('.appearance_search_result_caseType').text(appearance.caseType);
-              // appearanceTemp.find('.appearance_search_result_caseHeader').text(appearance.caseHeader);
-              // appearanceTemp.find('.appearance_search_result_caseNumber').text(appearance.caseNumber);
-              // appearanceTemp.find('.appearance_search_result_appearanceDate').text(appearance.appearanceDate.slice(0,10));
-              // appearanceTemp.find('.appearance_search_result_appearanceTime').text(appearance.appearanceTime);
-              // appearanceTemp.find('.appearance_search_result_clientType').text(appearance.clientInfo.clientType);
-              // appearanceTemp.find('.appearance_search_result_clientName').text(appearance.clientInfo.name);
-              // appearanceTemp.find('.appearance_search_result_reqAttorney').text(appearance.reqAttorney);
-              // appearanceTemp.find('.appearance_search_result_appearanceID').text(appearance._id);
-              
-              
-              // appearanceTemp.find('.appearance_search_result_accept').attr('href', '/api/appearances/' + appearance._id + '/accept');              
-              
+              var appearanceTemp = $('.search_result_temp').clone()              
+  
               $('.appearance_search_results').append(appearanceTemp);
               $('.collapsible').collapsible();
 
@@ -167,7 +129,6 @@ $(document).ready(function() {
 
             if(appearance.courtInfo.courtAddress.state === state && appearance.courtInfo.courtAddress.county === county) {
               
-              console.log('hey')
               var appearanceTemp = $('.search_result_temp').clone()
               appearanceTemp.removeClass('search_result_temp');
               appearanceTemp.addClass(('search_result'));
@@ -197,22 +158,16 @@ $(document).ready(function() {
               appearanceTemp.find('.search_result_reqAttorneyEmail').text(reqAttorneyEmail);
               appearanceTemp.find('.search_result_reqAttorneyStreet').text(reqAttorneyStreet);
               appearanceTemp.find('.search_result_reqAttorneyAddress').text(reqAttorneyAddress);
-
-              
               
               $('.appearance_search_results').append(appearanceTemp);
               $('.collapsible').collapsible();
             }
           }
-
         });
-        
       }
     });
-    
   });
   
-
   
   // DELETING REQUESTED APPEARANCE FROM APPEARANCES.EJS
   

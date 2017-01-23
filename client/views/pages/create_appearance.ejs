@@ -14,20 +14,15 @@
     </div>
 
     <% var userInfo = JSON.stringify(user) %>
-    <% console.log(userInfo) %>
-
-
-
-
 
     <div class='row'>
       <div class='col s12'>
         <div class='center-align create_appearance_headline'>Create Appearance</div>
 
         <form action="/api/appearances" method="post">
+
           <input type="hidden" name='userInfo' value="<%= userInfo %>">
 
-      
           <div class='row card-panel'>
 
             <div class='col s12 m2'>
@@ -163,67 +158,63 @@
               <h5 class="center-align">Court Info</h5>
             </div>
 
-
             <div class='col s12 m10'>
+              <div class='row'>
 
-                <div class='row'>
-
-                  <div class="col s12 m4">
-                    <div class="input-field">
-                      <input id="court_name" type="text" class="validate" name="court_name">
-                      <label for="court_name">Court</label>
-                    </div>
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_name" type="text" class="validate" name="court_name">
+                    <label for="court_name">Court</label>
                   </div>
-                  
-                  <div class="col s12 m4">
-                    <div class="input-field">
-                      <input id="court_county" type="text" class="validate" name="court_county">
-                      <label for="court_county">County</label>
-                    </div>
+                </div>
+                
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_county" type="text" class="validate" name="court_county">
+                    <label for="court_county">County</label>
                   </div>
-                  
-                  <div class="col s12 m4">
-                    <div class="input-field">
-                      <input id="court_judge" type="text" class="validate" name="court_judge">
-                      <label for="court_judge">Judge</label>
-                    </div>
+                </div>
+                
+                <div class="col s12 m4">
+                  <div class="input-field">
+                    <input id="court_judge" type="text" class="validate" name="court_judge">
+                    <label for="court_judge">Judge</label>
                   </div>
-                  
-                  <div class="col s12 m3">
-                    <div class="input-field">
-                      <input id="court_street" type="text" class="validate" name="court_street">
-                      <label for="court_street">Street</label>
-                    </div>
+                </div>
+                
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_street" type="text" class="validate" name="court_street">
+                    <label for="court_street">Street</label>
                   </div>
-                  
-                  <div class="col s12 m3">
-                    <div class="input-field">
-                      <input id="court_city" type="text" class="validate" name="court_city">
-                      <label for="court_city">City</label>
-                    </div>
+                </div>
+                
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_city" type="text" class="validate" name="court_city">
+                    <label for="court_city">City</label>
                   </div>
-
-                  <div class="col s12 m3">
-                    <div class="input-field">
-                      <input id="court_state" type="text" class="validate" name="court_state">
-                      <label for="court_state">State</label>
-                    </div>
-                  </div>
-
-
-                  <div class="col s12 m3">
-                    <div class="input-field">
-                      <input id="court_zip" type="text" class="validate" name="court_zip">
-                      <label for="court_zip">Zip</label>
-                    </div>
-                  </div>
-
                 </div>
 
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_state" type="text" class="validate" name="court_state">
+                    <label for="court_state">State</label>
+                  </div>
+                </div>
+
+
+                <div class="col s12 m3">
+                  <div class="input-field">
+                    <input id="court_zip" type="text" class="validate" name="court_zip">
+                    <label for="court_zip">Zip</label>
+                  </div>
+                </div>
+
+              </div>
             </div>
-            
+
           </div>
-          
           
           <div class='row center-align'>
             <button class="center-align btn waves-effect waves-light" type="submit">Submit</button>
@@ -231,20 +222,15 @@
         
         </form>
       
-      
       </div>
     </div>
-    
-    
+      
   </div>
-  
-          
+        
   <footer>
     <% include ../partials/footer %>
   </footer>
   
-  
 </body>
-
 
 </html>

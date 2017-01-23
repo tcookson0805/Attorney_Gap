@@ -7,6 +7,18 @@
 
 <body>
   
+  <% var name = user.firstName + ' ' + user.lastName%>
+  <% var firm = user.firmName || '' %>
+  <% var street = user.address.street || '' %>
+  <% var city = user.address.city || '' %>
+  <% var state = user.address.state || '' %>
+  <% var zip = user.address.zip %>
+  <% var address = '' %>
+  <% if(street && city && state) { var address = city + ', ' + state + ' ' + zip}%>
+  <% var phone = user.phone || '' %>
+  <% var fax = user.fax %>
+  <% var email = user.email %>
+  <% var date = user.date.toString().slice(4,15) %>
   
   <div class='hero'>
   
@@ -17,49 +29,32 @@
     <div class='row main'>
       <div class="col s12 m4">
 
-        <% var name = user.firstName + ' ' + user.lastName%>
-        <% var firm = user.firmName || '' %>
-        <% var street = user.address.street || '' %>
-        <% var city = user.address.city || '' %>
-        <% var state = user.address.state || '' %>
-        <% var zip = user.address.zip %>
-        <% var address = '' %>
-        <% if(street && city && state) { var address = city + ', ' + state + ' ' + zip}%>
-        <% var phone = user.phone || '' %>
-        <% var fax = user.fax %>
-        <% var email = user.email %>
-        <% var date = user.date.toString().slice(4,15) %>
-
-
-
-
-
         <div class="row">
           <div class="col s10 offset-s1 main_profile_header center-align">
             Profile Information                    
           </div>
         </div>
         <div class="row">
-          <div class="col s12">
+          <div class="col m12 s12">
             <div class="card white">
               <div class="card-content main_profile white">
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Name</div>
                     <div class='main_profile_info'><%= name %></div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Firm</div>
                     <div class='main_profile_info'><%= user.firmName %></div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Address</div>
                     <div class='main_profile_info'>
                       <div>
@@ -73,35 +68,35 @@
                 </div>
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Phone</div>
                     <div class='main_profile_info'><%= phone %></div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Fax</div>
                     <div class='main_profile_info'><%= fax %></div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Email</div>
                     <div class='main_profile_info'><%= email %></div>
                   </div>
                 </div>
 
-
                 <div class="row">
-                  <div class="col s10 offset-s1">
+                  <div class="col m10 s12 offset-m1">
                     <div>Member Since</div>
                     <div class='main_profile_info'><%= date %></div>
                   </div>
                 </div>
 
               </div>
+
               <div class="card-action">
                 <div class="row">
                   <div class="col s6 center-align main_profile_edit">
@@ -112,6 +107,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
