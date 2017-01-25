@@ -56,7 +56,6 @@ body {
 /*  top: 50%;
   margin-top: -18em;*/
   margin-top: 5em;
-
   font-family: HelveticaNeue;
 }
 
@@ -832,9 +831,114 @@ section {
 
 
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+
+  .background {
+    display: none;
+  }
+  
+  .user_nav_logo {
+    font-size: 3.75em;
+    padding: 0.25em 0;
+    text-align: center;
+  }
+
+  .index-info {
+    margin-top: 2em;
+  }
+
+  .home_signup, .home_signin {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+  }
+
+  .user_nav_links {
+    font-size: 1em;
+  }
+
+  .user_nav_links a {
+    padding: 0.5em 1em;
+    height: 3.5em;
+    line-height: 1.25em;
+  }
+
+  .edit_appearance_headline, .create_appearance_headline, .profile_headline, .main_appearances_headline {
+    font-size: 2em;
+    color: #2a3132;
+  }
+
+
+  .main_profile_card {
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .main_profile {
+    display: none;
+  }
+
+  .main_profile_top {
+    border: 0.1em solid black;
+    background-color: #a0a0a0
+  }
+
+  .main_profile_header {
+    color: #2a3132;
+  }
+
+  .main_profile_card .card-action {
+    border: 0.1em solid #a0a0a0;
+  }
+
+
+
+  .appearance_search_results {
+    padding: 0 1em;
+  }
+
+  .appearance_search_panel {
+    overflow: auto;
+    height: 23em;
+  }
+
+  .search_result {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .search_result .card .card-content {
+/*    padding: 1em 0em !important;
+*/  }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
