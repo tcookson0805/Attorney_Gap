@@ -17,3 +17,17 @@ The front-end utilizes EJS and is styled with Materialize. The Backend is built 
 ### Mobile
 
 # Development Roadmap
+
+Future enhancements:
+
+* provide authentication of attorney users
+  * authentication of email
+  * authentication of bar license standing 
+
+
+* enhance appearance information
+  * allow user to include notes about a hearing
+
+* messaging between users
+  * allow users to directly send messages to other users
+  * allow users to email other users
