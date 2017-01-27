@@ -12,9 +12,7 @@ The front-end utilizes EJS and is styled with Materialize. The Backend is built 
 
 # UX
 
-### Web
-
-### Mobile
+After signing in or signing up, User is directed to their homepage. From here, the User is shown their profile information as well as a list of the appearances they have requested to be covered. Each of the appearances are displayed on a card that can be clicked on to reveal more information. The User also has the option to edit or delete the appearance. The User may also search for available appearances by clicking 'Search Appearances' button, which will take them to a different page where they can select the State and County to display available appearances.  
 
 # Development Roadmap
 
