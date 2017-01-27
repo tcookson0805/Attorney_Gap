@@ -213,7 +213,6 @@ module.exports = {
       $set: req.body
     }
     
-    // console.log('######', set)
     
    AppearanceModel.findOneAndUpdate({_id: req.params.id}, set, {upsert:true}, function(err, user){
       if(err){
