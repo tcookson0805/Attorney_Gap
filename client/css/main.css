@@ -9,7 +9,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: black;
-  font-family: HelveticaNeue;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
 }
 
 .background {
@@ -55,7 +55,6 @@ body {
 /*  top: 50%;
   margin-top: -18em;*/
   margin-top: 5em;
-  font-family: HelveticaNeue;
 }
 
 
@@ -79,7 +78,7 @@ body {
 }
 
 .index-info-footer span {
-  font-family: HelveticaNeue-Bold;
+  font-weight: bold;
 }
 
 
@@ -256,7 +255,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   padding-top: 3em;
   color: black;
   font-size: 1.5em;
-  font-family: HelveticaNeue-Bold;
+  font-weight: bold;
   letter-spacing: 0.2em;
 }
 
@@ -651,7 +650,7 @@ section {
 }
 
 .search_result, .requested_appearance {
-  min-width: 25em;
+  min-width: 20em;
 }
 
 .search_result_info, .requested_appearance {
@@ -709,12 +708,21 @@ section {
   cursor: pointer;
 }
 
+.search_result_caseHeader, .search_result_courtName {
+  height: 1.5em;
+  overflow-y: scroll;
+}
+
 
 
 /*/////////     ---------------------------------     ////////////*/
 /*/////////    |           APPEARANCES           |    ////////////*/
 /*/////////     ---------------------------------     ////////////*/
 
+
+.card .card-content {
+/*  padding: 1em 0.5em;*/
+}
 
 .appearance_header {
   margin: 1em auto;
@@ -753,32 +761,38 @@ section {
 }
 
 
-
-.requested_filled_info {
-  font-size: 1.5em;
-  margin-right: 0.5em;
-  line-height: 1.5em;
-}
-
-.requested_filled_box {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-
-[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+.requested_caseHeader {
   height: 1.5em;
-  width: 1.5em;
-  margin-top: 0.4em;
+  overflow:auto;
 }
 
-[type="checkbox"]:checked + label:before {
+.requested_courtName {
   height: 1.5em;
-  border-right: 2px solid #0D47A1;
-  border-bottom: 2px solid #0D47A1;
+  overflow:auto;
+}
+
+.requested_appearanceTime {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_place {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_appearanceTime {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_appearanceType {
+  height: 1.5em;
+  overflow:auto;
 }
 
 .card .card-action {
-  padding: 1em;
+
 }
 
 .card-action {
@@ -828,7 +842,12 @@ section {
 
 
 
-@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+
+
+
+
+@media only screen and (max-width: 760px) {
 
 
   .background {
@@ -907,12 +926,33 @@ section {
     width: 100% !important;
   }
 
-  .search_result .card .card-content {
-/*    padding: 1em 0em !important;
-*/  }
 
 }
 
+@media only screen and (max-width: 600px) {
+
+  .user_nav_logo {
+    font-size: 3em;
+  }
+
+  .main_profile_header {
+    font-size: 1.75em;
+  }
+
+  .card .card-action {
+    padding: 0.5em;
+  }
+
+  .input-field label {
+    left: 0em;
+  }
+
+  .appearance_search_button {
+    margin: 1em 0;
+    padding: 0 1em;
+  }
+
+}
 
 
 
