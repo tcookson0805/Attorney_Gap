@@ -606,7 +606,7 @@ section {
 
 
 .appearance_search_results {
-  height: 44em;
+  min-height: 44em;
   overflow: scroll;
   padding: 0 2em;
 }
@@ -708,7 +708,7 @@ section {
   cursor: pointer;
 }
 
-.search_result_caseHeader, .search_result_courtName {
+.search_result_caseHeader, .search_result_appearanceTime, .search_result_courtName,  .search_result_place, .search_result_caseType, .search_result_appearanceType {
   height: 1.5em;
   overflow-y: scroll;
 }
