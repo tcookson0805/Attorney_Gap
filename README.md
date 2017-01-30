@@ -22,11 +22,11 @@ After signing in or signing up, User is directed to their homepage. From here, t
 
 From the user's main page, they have the option to create a new appearance.
 
-![alt text](screenshots/attorneygap_create_appearance.png "Create Appearance")
+![alt text](project_info/screenshots/attorneygap_create_appearance.png "Create Appearance")
 
 The User may also search for available appearances by clicking 'Search Appearances' button, which will take them to a different page where they can select the State and County to display available appearances.  
 
-![alt text](screenshots/attorneygap_search_appearances.png "Search Appearances")
+![alt text](project_info/screenshots/attorneygap_search_appearances.png "Search Appearances")
 
 
 
