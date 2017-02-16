@@ -31,12 +31,12 @@ var userSchema = new Schema({
   },
     
   phone: {
-    type: Number,
+    type: String,
     minlength: 10,
   },
   
   fax: {
-    type: Number,
+    type: String,
     minlength: 10
   },
 
