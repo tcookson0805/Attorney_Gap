@@ -23,10 +23,10 @@ var appearanceSchema = new Schema({
       type: String,
     },
     phone: {
-      type: Number,
+      type: String,
     },
     fax: {
-      type: Number,
+      type: String,
     },
     address: {
       street: {
@@ -39,7 +39,7 @@ var appearanceSchema = new Schema({
         type: String,
       },
       zip: {
-        type: Number
+        type: String
       }
     },
     id: {
@@ -101,23 +101,28 @@ var appearanceSchema = new Schema({
     },
     
     email: {
-      type: String
+      type: String,
+      required: false
     },
     
     street: {
-      type: String
+      type: String,
+      required: false
     },
     
     city: {
-      type: String
+      type: String,
+      required: false
     },
     
     state: {
-      type: String
+      type: String,
+      required: false
     },
     
     zip: {
-      type: Number
+      type: String,
+      required: false
     }
     
   },
@@ -157,7 +162,7 @@ var appearanceSchema = new Schema({
       },
       
       zip: {
-        type: Number,
+        type: String,
         required: false
       }
       

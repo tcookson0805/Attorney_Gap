@@ -60,7 +60,7 @@ var userSchema = new Schema({
     },
     
     zip: {
-      type: Number,
+      type: String,
     }
   
   },
