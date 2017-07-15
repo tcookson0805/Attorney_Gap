@@ -19,7 +19,7 @@ module.exports = function(app, passport) {
   app.use(bodyParser.urlencoded({ extended: true}));
   
   // route for getting all users
-  app.get('/api/users', userController.getAllUsers);
+  // app.get('/api/users', userController.getAllUsers);
   
   // route for login of user
   app.post('/login', passport.authenticate('login', {
