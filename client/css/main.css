@@ -477,7 +477,10 @@ section {
   background-color: #4080ff;
 }
 
-
+.login_demo_credentials {
+  text-align: center;
+  font-style: italic;
+}
 
 
 /*/////////     ---------------------------------     ////////////*/
