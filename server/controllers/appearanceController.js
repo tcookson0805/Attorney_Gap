@@ -8,15 +8,14 @@ module.exports = {
   
   createAppearance : function(req, res, next) {
 
-    console.log('============')
-    console.log('req.body.userInfo', req.body.userInfo)
-    console.log('============')
-    console.log('req.session', req.session.passport)
-    console.log('============')
+    // console.log('============')
+    // console.log('req.body.userInfo', req.body.userInfo)
+    // console.log('============')
+    // console.log('req.session', req.session.passport)
+    // console.log('============')
     var reqAttorney = JSON.parse(req.body.userInfo);
-    console.log('req.body.appearance_date', req.body.appearance_date)
-    console.log('typeof req.body.appearance_date', typeof req.body.appearance_date)
-
+    // console.log('req.body.appearance_date', req.body.appearance_date)
+    // console.log('typeof req.body.appearance_date', typeof req.body.appearance_date)
 
     var newAppearance = AppearanceModel({
       

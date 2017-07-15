@@ -13,8 +13,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 var dbConnectionString = process.env.DB_CONNECTION_STRING || config.dbConnectionString();
 
-
-
 var port = process.env.PORT || 8080;
 
 // Serving Static Files
@@ -75,6 +73,8 @@ app.get('/home/create_appearance', function(req, res) {
 
 app.get('/home/search_appearances', function(req, res) {
 	console.log('getting search appearances page')
+  console.log('==================================')
+  console.log('req.user', req.user)
 	res.render('pages/search_appearances', {user: req.user});
 });
 
