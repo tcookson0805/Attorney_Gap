@@ -11,6 +11,10 @@ module.exports = function(passport){
         },
         function(req, email, password, done) {
             
+            // trimming off leading and trialing whitespaces
+            var email = email.trim();
+            var password = password.trim();
+
             findOrCreateUser = function(){
                 // find a user in Mongo with provided username
                 User.findOne({ 'email' :  email }, function(err, user) {
