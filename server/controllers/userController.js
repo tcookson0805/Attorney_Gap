@@ -6,7 +6,6 @@ module.exports = {
   
   createUser : function(req, res, next) {
     
-    
     var newUser = UserModel({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -23,7 +22,6 @@ module.exports = {
     });
     
     newUser.password = newUser.generateHash(req.body.password);
-    
     
     newUser.save(function(err) {
       if(err) {
@@ -72,7 +70,6 @@ module.exports = {
       res.redirect('/home');
     });
     
-    
   },
   
   // Delete
@@ -88,6 +85,5 @@ module.exports = {
     });
     
   }
-  
   
 }
