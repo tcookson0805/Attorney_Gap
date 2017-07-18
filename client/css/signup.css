@@ -1,0 +1,30 @@
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              SIGNUP             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.signup_headline {
+  margin-top: 2em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.signup_form {
+  background-color: white;
+  border-radius: 0.4em;
+  color: black;
+}
+
+.signup_fields {
+  padding: 2em;
+}
+
+.signup_info {
+  border-left: 0.1em solid white;
+}
+
+.submit_button {
+  padding: 0 auto;
+}

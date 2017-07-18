@@ -1,0 +1,113 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |    APPEARANCE SEARCH RESULTS    |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.appearance_search_results {
+  min-height: 44em;
+  overflow: scroll;
+  padding: 0 2em;
+}
+
+.appearance_search_result {
+  margin: 0;
+  padding: 0;
+}
+
+.appearance_search_result_headline {
+  background-color: #FFFFFF;
+  background: linear-gradient( rgba(255, 171, 64, 1), rgba(255, 171, 64, 0.8) )
+}
+
+.appearance_result_box {
+  padding-left: 2em;
+  background-color: white;
+}
+
+.appearance_search_result_tease {
+  margin: 0;
+  padding: 0;
+}
+
+.appearance_search_result_box {
+  margin: 1em;
+}
+
+.appearance_search_result_info {
+  font-weight: bold;
+  padding-left: 2em;
+}
+
+.appearance_search_result_info span {
+  font-weight: normal;
+}
+
+
+.appearance_search_result_action {
+  border-top: 0.1em solid black;
+}
+
+.search_result, .requested_appearance {
+  min-width: 20em;
+}
+
+.search_result_info, .requested_appearance {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.search_result_info > div, .requested_appearance > div {
+  font-weight: normal;
+}
+
+.search_result_appearanceDate, .requested_appearanceDate {
+  position: absolute;
+  background-color: #757575;
+  margin-left: 1em;
+  padding: 1em;
+  color: white;
+  z-index: 1000;
+}
+
+.search_result_appearanceNew, .requested_appearanceNew {
+  color: blue;
+}
+
+.search_result_appearanceDay, .requested_appearanceDay {
+  letter-spacing: 0.1em;  
+}
+
+.search_result_appearanceYear, .requested_appearanceYear {
+  letter-spacing: 0.3em;
+}
+
+.search_result_accept_row, .requested_accept_row {
+
+}
+
+.search_result_info, .requested_info {
+  font-weight: bold;
+}
+
+.search_result_info > div, .requested_info > div {
+  font-weight: normal;
+}
+
+.search_result_courthouse, .requested_courthouse {
+  max-height: 12em;
+  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) )
+}
+
+.search_result_courthouse img, .requested_courthouse img {
+  max-height: 12em;
+}
+
+.search_result .card-content, .search_result .card-content div, .requested .card-content, .requested .card-content div  {
+  cursor: pointer;
+}
+
+.search_result_caseHeader, .search_result_appearanceTime, .search_result_courtName,  .search_result_place, .search_result_caseType, .search_result_appearanceType {
+  height: 1.5em;
+  overflow-y: scroll;
+}

@@ -1,0 +1,11 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        EDIT APPEARANCES         |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.edit_appearance_headline, .create_appearance_headline, .profile_headline {
+  font-size: 3em;
+  color: #6a717f;
+  margin-bottom: 0.8em;
+}

@@ -1,0 +1,34 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              LOGIN              |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.login_headline {
+  margin-top: 2em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.login_form {
+  background-color: white;
+  border-radius: 0.4em;
+  color: black;
+}
+
+.login_fields {
+  padding: 1em;
+}
+
+.login_info {
+  border-left: 0.1em solid white;
+}
+
+.login_submit, .login_submit:hover {
+  background-color: #4080ff;
+}
+
+.login_demo_credentials {
+  text-align: center;
+  font-style: italic;
+}

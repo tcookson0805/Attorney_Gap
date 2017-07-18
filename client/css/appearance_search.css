@@ -1,0 +1,42 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |        APPEARANCE SEARCH        |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+/* overriding materialize height */
+.select-wrapper input.select-dropdown {
+  height: 4em;
+}
+
+.appearance_search {
+  color: black;
+  background-color: white;
+  height: 5em;
+  padding: 0 2em;
+/*  margin-top: 2em;*/
+}
+
+.appearance_search_state {
+  color: black;
+  cursor: pointer;
+}
+
+.appearance_search_county {
+  color: black;
+  cursor: pointer
+}
+
+.appearance_search_date {
+  line-height: 5em;
+}
+
+.appearance_search_submit {
+  padding: 0 1em;
+  line-height: 5em;
+  overflow: auto;
+}
+
+.appearance_search_button {
+  margin: 1em 0;
+}

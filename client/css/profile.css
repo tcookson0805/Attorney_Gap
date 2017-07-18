@@ -1,0 +1,25 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |              PROFILE             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.profile_address {
+  margin-left: 2em;
+}
+
+.profile_left {
+  padding-left: 1em; 
+}
+
+.profile_right {
+  color: red;
+}
+
+.profile_link {
+  padding-left: 0.5em;
+}
+
+.profile_link:hover {
+  border-left: 0.1em black solid;
+}

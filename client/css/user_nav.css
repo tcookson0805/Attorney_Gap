@@ -1,0 +1,52 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |            USER NAV             |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.user_nav {
+  /*background-color: #444C5C;*/
+  background-color: #2A3132;
+  /*background-color: black;*/
+
+  color: white;
+  min-height: 5em;
+}
+
+
+.user_nav_logo {
+  color: white;
+  font-size: 3em;
+/*  padding-top: 0.5em;
+  padding-bottom: 0.5em;*/
+}
+
+.user_nav_links {
+
+}
+
+.user_nav_links a {
+  margin-top: 1.25em;
+}
+
+
+.user_nav a:link {
+  color: white;
+}
+
+.user_nav a:visited {
+  color: white;
+}
+
+.user_nav a:hover {
+  color: white;
+}
+
+.user_nav a:active {
+  color: white;
+} 
+
+
+.user_nav_button {
+  color: white;
+}

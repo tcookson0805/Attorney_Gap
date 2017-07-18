@@ -1,0 +1,107 @@
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |           APPEARANCES           |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+.card .card-content {
+/*  padding: 1em 0.5em;*/
+}
+
+.appearance_header {
+  margin: 1em auto;
+}
+
+.requested_appearance, .accepted_appearance {
+  margin-bottom: 2em;
+}
+
+.requested_appearance > .card {
+  border: 0.1em solid #2A3132;
+}
+
+.requested_appearance_top {
+  text-align: center;
+  font-weight: bold;
+}
+
+.requested_appearance_box, .accepted_appearance_box,  {
+  padding-left: 2em;
+  background-color: white;
+}
+
+.requested_appearance_key, .accepted_appearance_key {
+  font-weight: bold;
+  padding: 0.2em 0;
+}
+
+.requested_appearance_key span, .accepted_appearance_key span {
+  font-weight: normal;
+}
+
+.requested_appearance_header, .accepted_appearance_header {
+  background-color: #ffab40;
+  background: linear-gradient( rgba(255, 171, 64, 1), rgba(255, 171, 64, 0.8) )
+}
+
+
+.requested_caseHeader {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_courtName {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_appearanceTime {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_place {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_appearanceTime {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.requested_appearanceType {
+  height: 1.5em;
+  overflow:auto;
+}
+
+.card .card-action {
+
+}
+
+.card-action {
+  overflow: auto;
+}
+
+.card-action > .row {
+  margin-bottom: 0;
+}
+
+
+.card-action .btn:hover {
+  background-color: #0D47A1;
+  color: #FFFFFF;
+}
+
+.card-action .btn a:hover {
+  color: #FFFFFF;
+}
+
+.requested_action {
+  font-size: 1em;
+}
+
+
+
+.blue {
+  background-color: blue;
+}

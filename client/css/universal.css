@@ -1,0 +1,168 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: black;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.background {
+  position: absolute;
+  z-index: -1000;
+  right: 0;
+  bottom: 0;
+}
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |         UNIVERSAL CLASSES       |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+.full-width {
+  max-width:100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.full-width-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 3em;
+}
+
+.hidden {
+  display: none;
+}
+
+.hero {
+  color: black;
+  height: 100%;
+  overflow: auto;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.index-info {
+  height: 30em;
+/*  top: 50%;
+  margin-top: -18em;*/
+  margin-top: 5em;
+}
+
+
+.index-info-headline {
+  font-size: 2em;
+  margin-left: 0.5em;
+}
+
+.index-info-main {
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+.index-info-buttons {
+
+}
+
+.index-info-footer {
+  font-size: 1em;
+  margin-left: 1em;
+}
+
+.index-info-footer span {
+  font-weight: bold;
+}
+
+.index-demo {
+  font-size: 1em;
+  margin-left: 1em;
+  font-style: italic;
+}
+
+
+.main {
+  margin-top: -2em;
+  height: 44em;
+  padding: 0;
+}
+
+
+.main_profile {
+  font-size: 1em;
+}
+
+.main_profile_header {
+  font-size: 2em;
+  color: #6a717f;
+  margin-top: 1em;
+}
+
+.main_profile_info {
+  font-size: 1.25em;
+}
+
+.main_profile_edit a, .main_profile_logout a {
+  color: #4080ff !important;
+}
+
+.card .card-action .main_profile_logout a:not(.btn):not(.btn-large):not(.btn-floating), .card .card-action .main_profile_edit a:not(.btn):not(.btn-large):not(.btn-floating) {
+  color: #0D47A1;
+  font-size: 1.5em;
+}
+
+.card .card-action .main_profile_logout a:not(.btn):not(.btn-large):not(.btn-floating):hover, .card .card-action .main_profile_edit a:not(.btn):not(.btn-large):not(.btn-floating):hover {
+  color: #FFFFFF;
+  font-size: 1.5em;
+}
+
+.main_appearances_headline {
+  font-size: 2em;
+  color: #6a717f;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+}
+
+
+.profile_main {
+  height: 100%;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+.dropdown-content li > span {
+  color: black;
+}
+
+div.picker__date-display {
+  background-color: #505050;
+}
+
+.picker__weekday-display {
+  background-color: black;
+}
+
+.picker__close, .picker__today {
+  color: #505050;
+}

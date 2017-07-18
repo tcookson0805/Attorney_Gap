@@ -1,0 +1,115 @@
+
+/*/////////     ---------------------------------     ////////////*/
+/*/////////    |          NAV BAR                |    ////////////*/
+/*/////////     ---------------------------------     ////////////*/
+
+
+
+.nav_bar {
+  display: inline-block;
+  float: none;
+  position: relative;
+  width: 100%;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1em;
+  background-color: none;
+  padding-top: 3em;
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.nav_bar_menu {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.nav_bar_menu_item {
+  display: inline-block;
+  float: left;
+}
+
+.nav_bar_menu_item a {
+  padding: 2em;
+  color: black;
+}
+
+/* unvisited link */
+.nav_bar_menu_item a:link {
+  color: black;
+}
+
+/* visited link */
+.nav_bar_menu_item a:visited {
+  color: black;
+}
+
+/* mouse over link */
+.nav_bar_menu_item a:hover {
+  color: gray;
+}
+
+/* selected link */
+.nav_bar_menu_item a:active {
+  color: blue;
+}
+
+.home_headline {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+}
+
+section {
+  border: 0.1em solid black;
+}
+
+.home_info {
+  font-size: 1.5em;
+}
+
+.home_links {
+  margin: 2em;
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  overflow: auto;
+}
+
+.home_links a:link {
+  color: black;
+}
+
+.home_links a:visited {
+  color: black;
+}
+
+.hero_links a:hover {
+  color: gray;
+}
+
+.hero_links a:active {
+  color: black;
+}
+
+.home_signup {
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.2em;
+  background-color: #4080ff;
+  color: white;
+}
+
+.home_signin {
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 0.2em;
+/*  background-color: white;
+  border: 0.15em solid #4080ff;
+  color: #4080ff;*/
+  background-color: #4080ff;
+  color: white;
+}
